@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR</title>
+</head>
+<style>
+    body {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 10pt;
+	}
+	p {
+	  font-size: 10pt;
+      text-align: justify;
+      line-height: 1.5;
+      text-indent: 2.5em;
+    }
+	h1 {
+		font-family: Arial, Helvetica, sans-serif;
+        font-size: 12pt;
+        font-weight: bold; 
+	}
+	h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10pt; /* Título H2 com fonte Arial 10pt */
+        font-weight: bold; /* Deixa o título em negrito (opcional) */
+    }
+
+	table {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 9pt; /* Fonte Arial 9pt para as tabelas */
+    }
+	table td, table th {
+        padding: 5px;
+        vertical-align: middle; /* Alinha o conteúdo verticalmente no meio */
+    }
+  </style>
+<body>
+<h1><strong>1. Elaboração e Aprovação</strong></h1>
+
+<h2><strong>1.1 Elaboradores</strong></h2>
+
+<table border="1" cellpadding="0" cellspacing="0" style="width:100%; text-align: center; line-height: 2; text-indent: 0;">
+	<tbody>
+		<tr style="background-color: grey;">
+			<td style="word-wrap: break-word; width: 15%;">
+				<strong>Setor</strong>
+			</td>
+			<td style="word-wrap: break-word; width: 15%;">
+				<strong>Cargo</strong>
+			</td>
+			<td style="word-wrap: break-word; width: 35%;">
+				<strong>Nome</strong>
+			</td>
+			<td style="word-wrap: break-word; width: 15%;">
+				<strong>Data</strong>
+			</td>
+			<td style="word-wrap: break-word; width: 20%;">
+				<strong>Assinatura</strong>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				P&D - Analítico
+			</td>
+			<td>
+				Analista
+			</td>
+			<td>
+				{{elaborador}}
+			</td>
+			<td>
+				&nbsp;
+			</td>
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2><strong>1.2 Aprovadores</strong></h2>
+
+<table border="1" cellpadding="0" cellspacing="0" style="width:100%; text-align: center; line-height: 2; text-indent: 0;">
+	<tbody>
+		<tr style="background-color: grey;">
+			<td style="word-wrap: break-word; width: 15%;">
+				<strong>Setor</strong>
+			</td>
+			<td style="word-wrap: break-word; width: 15%;">
+				<strong>Cargo</strong>
+			</td>
+			<td style="word-wrap: break-word; width: 35%;">
+				<strong>Nome</strong>
+			</td>
+			<td style="word-wrap: break-word; width: 15%;">
+				<strong>Data</strong>
+			</td>
+			<td style="word-wrap: break-word; width: 20%;">
+				<strong>Assinatura</strong>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				P&amp;D - Analítico
+			</td>
+			<td>
+				Especialista
+			</td>
+			<td>
+				Paulo Isaac Dias Assunção
+			</td>
+			<td>
+				&nbsp;
+			</td>
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td>
+				P&amp;D - Analítico
+			</td>
+			<td>
+				Gerente
+			</td>
+			<td>
+				Rodrigo Gois
+			</td>
+			<td>
+				&nbsp;
+			</td>
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td>
+				GQ - GRQ
+			</td>
+			<td>
+				Analista
+			</td>
+			<td>
+				Lígia Sires de Alexandria
+			</td>
+			<td>
+				&nbsp;
+			</td>
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td>
+				GQ – QF
+			</td>
+			<td>
+				Analista
+			</td>
+			<td>
+				Caio Boaventura dos Santos Silva
+			</td>
+			<td>
+				&nbsp;
+			</td>
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td>
+				GQ – QF
+			</td>
+			<td>
+				Coordenador
+			</td>
+			<td>
+				Tulio Pessoa de Rezende
+			</td>
+			<td>
+				&nbsp;
+			</td>
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td>
+				GQ – QF
+			</td>
+			<td>
+				Gerente
+			</td>
+			<td>
+				Elizângela Evangelista da Silva
+			</td>
+			<td>
+				&nbsp;
+			</td>
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Validação
+			</td>
+			<td>
+				Coordenador
+			</td>
+			<td>
+				Rafael de Souza Ameno
+			</td>
+			<td>
+				&nbsp;
+			</td>
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Validação
+			</td>
+			<td>
+				Gerente
+			</td>
+			<td>
+				Lucilene Guerra e Silva Carvalho
+			</td>
+			<td>
+				&nbsp;
+			</td>
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td>
+				P&amp;D - ME
+			</td>
+			<td>
+				Analista
+			</td>
+			<td>
+				Alex Pereira dos Santos
+			</td>
+			<td>
+				&nbsp;
+			</td>
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td>
+				P&amp;D - Farmacotécnico
+			</td>
+			<td>
+				Coordenador
+			</td>
+			<td>
+				William Borges Fernandes
+			</td>
+			<td>
+				&nbsp;
+			</td>
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td>
+				P&amp;D - Farmacotécnico
+			</td>
+			<td>
+				Gerente
+			</td>
+			<td>
+				Albert César Machado
+			</td>
+			<td>
+				&nbsp;
+			</td>
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td>
+				ASREG
+			</td>
+			<td>
+				Analista
+			</td>
+			<td>
+				&nbsp;
+			</td>
+			<td>
+				&nbsp;
+			</td>
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td>
+				ASREG
+			</td>
+			<td>
+				Gerente
+			</td>
+			<td>
+				Hellen Mendes de Oliveira Fernandes
+			</td>
+			<td>
+				&nbsp;
+			</td>
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<h1><strong>2. Objetivo</strong></h1>
+
+<p>
+    Avaliar os possíveis riscos associados à formação e/ou contaminação por nitrosaminas relacionados ao processo de síntese e/ou degradação do(s) Insumo Farmacêutico Ativo (IFA)
+    {% for item in dados %}
+        {{ item.ifa }}{% if not loop.last %}, {% else %}, 
+    {% endif %}
+    {% endfor %}
+    fabricação e shelf-life do produto acabado {{ produto }}, propor ações que possam mitigá-los, monitorando as ações para controle dos riscos e redução a níveis aceitáveis (caso aplicável).
+</p>
+
+<h1><strong>3. Introdução</strong></h1>
+
+<p>Nitrosaminas são uma classe de compostos caracterizados pela presença de um grupo nitroso (-N=O) ligado a um grupo funcional amina. Ao se considerar medicamentos, um conjunto de recomendações e etapas para avaliação de risco, confirmação e determinação de limites aceitáveis para N-nitrosaminas foi publicado pela Agência Nacional de Vigilância Sanitária (ANVISA) em 2022, na RDC 677/2022, que dispõe sobre avaliação de risco e controle de nitrosaminas potencialmente carcinogênicas em IFA e medicamentos de uso humano [1].</p>
+
+<p>O princípio de gerenciamento de risco, conforme recomendações da ANVISA, em alinhamento com órgãos sanitários internacionais, pode ser abordado em 3 etapas. A fase 1 é constituída da realização de avaliação de risco. Caso seja identificada a possibilidade de presença de nitrosaminas e o risco não possa ser mitigado, as empresas devem proceder com a fase 2 pela realização de testes confirmatórios. Na sequência, a fase 3 contempla as ações de alterações pós-registro, caso necessárias [1].</p>
+
+<h1><strong>4. Escopo do estudo</strong></h1>
+
+<p>O medicamento {{ produto }}, tem como princípio ativo o(s) 
+    {% for item in dados %}
+        {{ item.ifa }}{% if not loop.last %}, {% else %}. 
+    {% endif %}
+    {% endfor %}
+    que possui o(s) seguinte(s) fabricante(s) aprovado(s):
+</p>
+
+<p style="text-align: center;"><strong>Quadro 1:</strong> Identificação do fabricante do IFA.</p>
+
+<table border="1" cellpadding="0" cellspacing="0" style="width:100%; text-align: center; line-height: 2; text-indent: 0;">
+    <thead>
+        <tr style="background-color: grey;">
+            <th><strong>IFA</strong></th>
+            <th><strong>Fabricante</strong></th>
+            <th><strong>Planta fabril</strong></th>
+            <th><strong>DIFA (DMF) – Versão/Data</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in dados %}
+			<tr>
+				<td>{{ item.ifa }}</td>
+				<td>{{ item.fabricante }}</td>
+				<td>{{ item.planta_fabril }}</td>
+				<td>{{ item.difa }}</td>
+			</tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<p>A avaliação dos potenciais riscos associados à formação de nitrosaminas no IFA e no produto acabado, foi realizada por meio de uma avaliação interdisciplinar, envolvendo os setores de Desenvolvimento Analítico, Desenvolvimento Farmacotécnico, Desenvolvimento de Embalagem, Assuntos Regulatórios, Garantia da Qualidade - Qualificação de Fornecedores, Garantia da Qualidade - Validação de Limpeza e Garantia da Qualidade - Gerenciamento de riscos.</p>
+<p>A identificação das principais fontes de contribuição para a formação de nitrosaminas foi conduzida utilizando a ferramenta <i>Failure Mode and Effect Analysis</i> (FMEA). O FMEA permite identificar os modos de falha mais críticos do processo e, ao estabelecer esses modos, estratégias de redução de risco podem ser utilizadas para eliminar, conter, reduzir ou controlar as falhas potenciais [2], [3], [4].</p>
+<p>Cada fator identificado foi classificado em relação à sua severidade (S), probabilidade (P) e detectabilidade (D). Estes parâmetros foram classificados com valores numéricos. Para descrever a severidade e probabilidade foram adotados cinco níveis numéricos, enquanto para a detectabilidade foram utilizados três níveis [5], [6].</p>
+<p>Para severidade, foram considerados quatro parâmetros. Dois destes, dose máxima diária e duração do tratamento, foram classificados em cinco níveis, de 1 a 5. Já os parâmetros local de ação (LA) e população de pacientes (PP), foram classificados em dois níveis de severidade: 1 e 5. Adicionalmente, foi estabelecido que, sempre que as informações fornecidas fossem insuficientes e as possíveis causas não pudessem ser devidamente avaliadas, estas seriam classificadas com o maior nível de severidade.</p>
+<p>Com base na tese <i>“Risk assessment and mitigation of the presence of Nitrosamine impurities in medicines”</i> de Maria Inês Lapo, foi avaliada a importância desses fatores e estimou-se um percentual para cada um deles [5]. Assim, é possível resumir o cálculo de severidade com a equação abaixo:</p>
+
+<p style="text-align: center;">𝑆 = (0,325 ∗ 𝐷𝑀𝐷) + (0,325 ∗ 𝐷𝑇) + (0,175 ∗ 𝑃𝑃) + (0,175 ∗ 𝐿𝐴)</p>
+
+<p style="line-height: 1">S: Severidade;</p>
+<p style="line-height: 1">DMD: Dose máxima diária;</p>
+<p style="line-height: 1">DT: Duração do tratamento;</p>
+<p style="line-height: 1">PP: População de pacientes;</p>
+<p style="line-height: 1">LA: Local Ação.</p>
+
+<p>A probabilidade de ocorrência foi classificada na faixa de 1 a 5. Quando as informações fornecidas são insuficientes e as possíveis causas não pudessem ser devidamente avaliadas, estas seriam classificadas com o maior nível de probabilidade. Para a detectabilidade, foram definidos três níveis (de 1 a 3), sendo que, em casos de informações insuficientes, o nível de detectabilidade mais alto será adotado.</p>
+<p>Após avaliação de todos os parâmetros de probabilidade, severidade e detectabilidade o nível de risco associado às falhas identificadas no FMEA é obtido pelo cálculo do número de prioridade de risco (NPR), representado na equação abaixo:</p>
+
+<p style="text-align: center;">𝑁𝑃𝑅 = 𝑆 𝑥 𝑃 𝑥 𝐷</p>
+
+<p style="line-height: 1">NPR: Número prioridade de risco</p>
+<p style="line-height: 1">S: Severidade;</p>
+<p style="line-height: 1">P: Probabilidade;</p>
+<p style="line-height: 1">D: Detectabilidade;</p>
+
+<p>Com os valores de NPR´s obtidos, as falhas potenciais foram elencadas, pois quanto maior o valor de NPR, maior é o risco associado. O Risco Global final, associado ao insumo farmacêutico e ao produto acabado (PA), foi calculado considerando o NPR de cada fator identificado. Para esta avaliação, uma porcentagem (ponderação) foi atribuída a cada valor de NPR (descritos nos quadros 2 e 3), de acordo com o impacto e criticidade deste no risco final.</p>
+
+<p style="text-align: center;"><strong>Quadro 2:</strong> Ponderação para cada fator no cálculo do risco global para o IFA</p>
+
+<table border="1" cellpadding="0" cellspacing="0" style="width:100%; text-align: center; line-height: 2; text-indent: 0">
+    <tbody>
+        <tr style="background-color: grey;">
+            <td><strong>IFA</strong></td>
+            <td><strong>PESO (%)</strong></td>
+        </tr>
+        <tr>
+            <td>Precursores de nitrosaminas</td>
+            <td>75 %</td>
+        </tr>
+        <tr>
+            <td>Equipamento</td>
+            <td>6,25 %</td>
+        </tr>
+        <tr>
+            <td>Recuperação de solventes ou outros materiais</td>
+            <td>5,0 %</td>
+        </tr>
+        <tr>
+            <td>Presença de nitritos e/ou nitratos na água</td>
+            <td>1,25 %</td>
+        </tr>
+        <tr>
+            <td>Contaminação com nitrosaminas na água</td>
+            <td>1,25 %</td>
+        </tr>
+        <tr>
+            <td>Materiais contaminados</td>
+            <td>5,0 %</td>
+        </tr>
+        <tr>
+            <td>Embalagem primária e armazenamento</td>
+            <td>1,25 %</td>
+        </tr>
+        <tr>
+            <td>Degradação</td>
+            <td>5,0 %</td>
+        </tr>
+    </tbody>
+</table>
+
+<p style="text-align: center;"><strong>Quadro 3:</strong> Ponderação para cada fator no cálculo do risco global para o PA.</p>
+
+<table border="1" cellpadding="0" cellspacing="0" style="width:100%; text-align: center; line-height: 2; text-indent: 0">
+    <tbody>
+        <tr style="background-color: grey;">
+            <td><strong>IFA</strong></td>
+            <td><strong>PESO (%)</strong></td>
+        </tr>
+        <tr>
+            <td>Interação IFA e excipientes</td>
+            <td>75 %</td>
+        </tr>
+        <tr>
+            <td>Equipamento</td>
+            <td>5,0 %</td>
+        </tr>
+        <tr>
+            <td>Presença de nitritos e/ou nitratos na água</td>
+            <td>1,0 %</td>
+        </tr>
+        <tr>
+            <td>Contaminação com nitrosaminas na água</td>
+            <td>1,0 %</td>
+        </tr>
+        <tr>
+            <td>Excipientes</td>
+            <td>5,0 %</td>
+        </tr>
+        <tr>
+            <td>Armazenamento do bulk</td>
+            <td>1,0 %</td>
+        </tr>
+        <tr>
+            <td>Embalagem primária</td>
+            <td>5,0 %</td>
+        </tr>
+        <tr>
+            <td>Degradação</td>
+            <td>7,0 %</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>O valor final de Risco Global é obtido através da soma de todos os NPRs ponderados, conforme descrito acima e para sua classificação em baixo, médio ou alto, os seguintes ranges são adotados:</p>
+
+<p style="text-align: center;"><strong>Quadro 4: </strong>Classificação do Risco</p>
+
+<table border="1" cellpadding="0" cellspacing="0" style="width:100%; text-align: center; line-height: 2; text-indent: 0">
+    <tbody>
+        <tr style="background-color: grey;">
+            <td>
+                <strong>Classificação do Risco</strong>
+            </td>
+            <td>
+                <strong>Pontuação</strong>
+            </td>
+            <td>
+                <strong>Critério de Classificação</strong>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Baixo</strong>
+            </td>
+            <td style="background-color: green;">
+                <strong>1 a 11</strong>
+            </td>
+            <td>
+                Não necessita implantação de ações corretivas ou ações para reduzir o risco.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Médio</strong>
+            </td>
+            <td style="background-color: yellow;">
+                <strong>12 a 26</strong>
+            </td>
+            <td>
+                Ações devem ser implantadas para garantir que o risco se encontra dentro do esperado e/ou ele não irá aumentar; ou, pelo menos, confirmar de que o risco está sob controle.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Alto</strong>
+            </td>
+            <td style="background-color: red;">
+                <strong>&ge; 27</strong>
+            </td>
+            <td>
+                Necessita de ações imediatas para redução/mitigação do risco.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h1><strong>5. Resultados Observados</strong></h1>
+
+<p>
+    Os resultados foram estabelecidos e estão disponíveis nos Anexos:
+    {% for i in num_range %}
+        {{ i | romanize }}{% if not loop.last %}, {% else %} {% endif %} 
+    {% endfor %} 
+	desta avaliação de risco, sendo possível verificar a tabela contendo os itens avaliados, com os pesos a serem considerados.
+</p>
+
+{% for item in dados %}
+    <p>
+        Para o IFA {{ item.ifa }} do fabricante {{ item.fabricante }}, o risco global calculado foi de {{ item.risco }},
+        o que categoriza um risco {{ 'baixo' if item.risco <= 11 else 'médio' if item.risco <= 26 else 'alto' }} para a formação de nitrosaminas.
+        {% if item.nitrosamina %}
+            Conforme anexo {{ item.predicao | romanize }}, foi necessário realizar predição teórica para a impureza {{ item.nitrosamina }}.
+            A predição teórica calculada ficou 
+            {{ "abaixo de 10% da especificação" if item.risco_nitrosamina == "baixo" else "acima de 10% da especificação" }},
+            demonstrando que o risco para formação de nitrosaminas é {{ "baixo" if item.risco_nitrosamina == "baixo" else "alto" }}.
+        {% endif %}
+    </p>
+{% endfor %}
+
+<h1><strong>6. Conclusão</strong></h1>
+
+<p>Embora existam fatores relacionados à formação de nitrosaminas, o risco para a presença destes compostos no medicamento foi considerado mitigado e aceitável. Todo o arcabouço de informações experimentais e teóricas apresentados se mostraram coerentes para a conclusão sobre os riscos identificados. O racional proposto neste relatório, em conjunto com o Sistema de Garantia de Qualidade, permite afirmar que o risco de formação de nitrosaminas no produto é {{risco}} uma vez que os riscos estão controlados, garantindo a qualidade, segurança e eficácia do medicamento.</p>
+
+<h1><strong>7. Referências</strong></h1>
+
+<p style="text-indent: 0em; text-align: justify;">
+    [1]	BRASIL. Ministério da Saúde., “RESOLUÇÃO DA DIRETORIA COLEGIADA - RDC No 677,” Apr. 2022.
+    <br>
+    [2]	ICH – INTERNATIONAL COUNCIL FOR HARMONISATION, “ICH guideline Q9 on quality risk management,” 2015.
+    <br>
+    [3]	J. Bhattacharya, “Quality Risk Management-Understanding and Control the Risk in Pharmaceutical Manufacturing Industry,” Online, 2015. [Online]. Available: www.ijpsi.org
+    <br>
+    [4]	V. Reddy, V. Gupta, V. Raghunandan, and N. Kashyap, “Quality Risk Management in Pharmaceutical Industry: A Review.”
+    <br>
+    [5]	M. Inês and F. Lapo, “RISK ASSESSMENT AND MITIGATION OF THE PRESENCE OF NITROSAMINE IMPURITIES IN MEDICINES.”
+    <br>
+    [6]	American Society for Quality, “What is FMEA? Failure Mode & Effects Analysis.,” https://asq.org/quality-resources/fmea?srsltid=AfmBOoot__-uSRi4PWKVQNtpX4E4mb7wkCAvLjx5_Uhw7wA9NwOJRgIp.
+    <br>
+    [7]	I. W. Ashworth, O. Dirat, A. Teasdale, and M. Whiting, “Potential for the Formation of N-Nitrosamines during the Manufacture of Active Pharmaceutical Ingredients: An Assessment of the Risk Posed by Trace Nitrite in Water,” Org Process Res Dev, vol. 24, no. 9, pp. 1629–1646, Sep. 2020, doi: 10.1021/acs.oprd.0c00224. 
+</p>
+
+<h1><strong>8. Anexos</strong></h1>
+
+<p style="text-indent: 0em;">
+    {% for item in dados %}
+        Anexo {{ loop.index|romanize }}: <i>Failure Mode and Effect Analysis</i> para o IFA {{ item.ifa }} do fabricante {{ item.fabricante }};
+        <br>
+    {% endfor %}
+    <!-- PA -->
+    Anexo {{ (dados|length + 1) | romanize }}: <i>Failure Mode and Effect Analysis</i> para o PA.
+    <br>
+    <!-- Predições -->
+    {% for anexo in dados_anexos %}
+        Anexo {{ (loop.index + dados|length + 1) | romanize }}: Predição de Ashworth realizada para o IFA {{ anexo.ifa }} do fabricante {{ anexo.fabricante }};
+        <br>
+    {% endfor %}
+</p>
+
+<h1><strong>9. Histórico de Revisão</strong></h1>
+
+<table border="1" cellpadding="0" cellspacing="0" style="width:100%; text-align: center; line-height: 2; text-indent: 2em;">
+    <tbody>
+        <tr style="background-color: grey;">
+            <td><strong>Número da Documentação</strong></td>
+            <td><strong>Motivo da Revisão</strong></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Documento Inicial</td>
+        </tr>
+    </tbody>
+</table>

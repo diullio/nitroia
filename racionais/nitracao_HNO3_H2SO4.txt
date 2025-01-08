@@ -1,0 +1,7 @@
+Avaliando a síntese do material de partida, os fabricantes informam a utilização de ácido nítrico e ácido sulfúrico no processo. Conforme visto na literatura (1), o ácido nítrico aceita o próton do ácido mais forte, que neste caso é o ácido sulfúrico. O ácido nítrico protonado se dissocia formando o íon nitrônio (caráter eletrofílico), conforme figura 10, que logo reage com o 2-metilimidazol.   
+A presença desses ácidos combinados promove a reação de nitração ao invés da reação de nitrosação, conforme figura 11 (2). 
+Podemos observar que os produtos minoritários da reação ainda seriam referentes a nitração dos outros carbonos, ao invés da amina secundária, não sendo favorável nitrosação nesse meio reacional. Portanto, mesmo com a presença da amina secundária o grupo nitroso seria adicionado ao carbono vizinho da amina secundária.
+Bibliografia
+1. SOLOMOS, T.W.G., FRYHLE, C. B. Química Orgânica V.1. Rio de Janeiro : LTC editora. p.602, 2001.
+2. ALAN R. KATRITZKY, et al. Reactivity of Five-membered Rings with Two or More Heteroatoms. s.l. : Handbook of Heterocyclic Chemistry, 2010.
+

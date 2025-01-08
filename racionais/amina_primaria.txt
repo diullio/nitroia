@@ -1,0 +1,5 @@
+Além do racional acima, ressalta-se a presença de aminas primárias na primeira etapa do processo de síntese o que pode influenciar na formação de nitrosaminas viáveis a partir de uma possível contribuição da água, uma vez que as aminas primárias competem com outros precursores pelo agente nitrosante. As aminas primárias podem consumir o agente nitrosante NO+ via diazotização e, portanto, podem ser usados como inibidores da formação de nitrosaminas, no entanto nitrosaminas formadas a partir de aminas primárias são instáveis e se decompõem por meio da formação do ion diazônio (1) (2). Portanto, a formação destas nitrosaminas é desfavorecida e seu risco é baixo.
+Bibliografia
+1. NANDA, K. K.; TIGNOR, S.; CLANCY, J.; MAROTA, M. J.; ALLAIN, L. R.; D'ADDIO, S. M. Inhibition of N-Nitrosamine Formation in Drug Products: A Model. 2021.
+2. BRASIL. Ministério da Saúde. Agência Nacional de Vigilância Sanitária (ANVISA). Guia sobre o Controle de Nitrosaminas em Insumos Farmacêuticos Ativos e Medicamentos - Guia nº 50/2021 – versão 2. 2022.
+

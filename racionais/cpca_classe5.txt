@@ -1,0 +1,4 @@
+Adicionalmente, observa-se que a molécula não possui hidrogênios em carbono alfa e seguindo a árvore decisória descrita no fluxograma apresentado no “Questions and answers for marketing authorisation holders/applicants on the CHMP Opinion for the Article 5(1) of Regulation (EC) No 726/2004 referral on nitrosamine impurities in human medicinal products” rev.17) do EMA, pela avaliação estrutural, obtemos que a nitrosamina faz parte da classe 5. Não se prevê que as nitrosaminas atribuídas à categoria 5 sejam ativadas metabolicamente através de uma via de hidroxilação α devido ao impedimento estérico ou à ausência de α-hidrogênios, ou prevê-se que formam espécies instáveis que não reagem com o DNA.
+Bibliografia
+1. EMA - EUROPEAN MEDICINES AGENCY. EMA advises companies on steps to take to avoid nitrosamines in human medicines. EMA/511347/2019. 2019.
+

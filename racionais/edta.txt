@@ -1,0 +1,10 @@
+Para viabilizar a formação das impurezas proveniente do EDTA, seria necessário a descarboxilação desta amina terciária seguida de uma desalquilação nitrosativa para a formação da nitrosamina. A probabilidade desta reação acontecer é muito baixa devido a uma junção de fatores que serão descritos a seguir.
+O EDTA (ácido etilenodiaminotetracético) é um agente quelante hexadentado conhecido pela sua alta capacidade se ligar a íons metálicos (1). Devido a esta característica, é comumente utilizado para capturar catalisadores metálicos do meio reacional e assim, contribuir para a purificação do IFA. Adicionalmente, este composto é conhecido por ser um agente oxidante (2), podendo ser aplicado para a conservação de cereais e por ser uma molécula muito estável (3). Conforme abordado por Kausik e colaboradores, moléculas antioxidantes possuem capacidade de inibir a formação de nitrosaminas em mais de 80% dos casos investigados (4). Ainda, reações de descarboxilação preconizam não só a presença de água no meio reacional, mas também temperaturas maiores que 100°C. Além disso, são transformações químicas que requerem elevada energia de ativação para ocorrerem (5) (6).
+Bibliografia
+1. SHRIVER, D. F. ; ATKINS, P. W. ; OVERTON, T. L. ; ROURKE, J. P. ; WELLER, M. T. ; ARMSTRONG, F. A. Química Inorgânica. s.l. : Bookman, 2008.
+2. PARKE, D. V. ; LEWIS, F. V. Safety aspects of food preservatives. s.l. : FOOD ADDITIVES AND CONTAMINANTS, 1992.
+3. OVIEDO, C. ; RODRÍGUEZ, J. EDTA: the chelating agent under environmental scrutiny. s.l. : Scielo Brazil, 2003.
+4. NANDA, K. K. ; TIGNOR, S. ; CLANCY, J. ; MAROTA, M. J. ; ALLAIN, L. R. ; D'ADDIO, S. D. Inhibition of N-Nitrosamine Formation in Drug Products: A Model Study. s.l. : Journal of Pharmaceutical Sciences, 2021.
+5. CLAYDEN, J. ; GREEVEZ, N. ; WARREN, S. ; WOTHERS, P. Organic Chemistry. s.l. : Oxford University Press, 2020.
+6. SOLOMONS, T. W. G. ; FRYHLE, C. B. Química Orgânica. s.l. : LTC, 2012.
+

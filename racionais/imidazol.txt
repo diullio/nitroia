@@ -1,0 +1,5 @@
+Além disso, conforme figura 13, embora o imidazol contenha uma amina secundária, essa amina aromática não é precursora de nitrosaminas devido à instabilidade do produto formado. Os elétrons  do anel aromático estão em ressonância e não possuem paralelismo com o orbital p do átomo de nitrogênio devido à sua geometria trigonal planar (sp2), a estabilização do cátion formado é desfavorecida (nenhuma interação entre os orbitais ortogonais), conferindo a essa classe de compostos um fraco caráter nucleofílico (1) (2). Na etapa final da síntese do material de partida ocorre a neutralização e a centrifugação, onde o NO2+ residual seria separado do produto, sendo assim não teríamos a contaminação no material de partida.
+Bibliografia
+1. CLAYDEN, J. ; GREEVEZ, N. ; WARREN, S. ; WOTHERS, P. Organic Chemistry. s.l. : Oxford University Press, 2020.
+2. SOLOMONS, T. W. G. ; FRYHLE, C. B. Química Orgânica. s.l. : LTC, 2012.
+

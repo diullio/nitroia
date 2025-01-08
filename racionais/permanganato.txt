@@ -1,0 +1,4 @@
+O permanganato de potássio nas etapas de purificação do IFA, é conhecido por ser um forte agente oxidante capaz de decompor potenciais impurezas presentes no meio reacional (1). Devido à alta reatividade do permanganato entende-se que a cinética reacional favoreceria o desenvolvimento de um mecanismo de oxidação das impurezas identificadas e/ou do IFA em detrimento da formação de nitrosaminas. Mesmo ao se considerar a impureza, estrutura que contém uma amina secundária em sua cadeia, a presença do agente oxidante em questão propiciará uma competição reacional no meio que viabilizará a conversão desta amina secundária à imina, estrutura não precursora para a formação de nitrosaminas.
+Bibliografia
+1. LASZAKOVITS, J. R. ; KERR, A. ; MACKAY, A. A. Permanganate Oxidation of Organic Contaminants and Model Compounds. s.l. : ACS Publications, 2022.
+
