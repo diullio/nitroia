@@ -158,8 +158,7 @@ def main():
             Abaixo segue meus dados de IFA, nitrosaminas potenciais e algumas propriedades como pKa e limites para ajuda na elaboração dos racionais.
             {st.session_state.dados}
             '''
-            ia_content, custo = nitro_chat(prompt, context)
-            st.write(f'Custo do relatório: {custo:.6f}')
+            ia_content = nitro_chat(prompt, context)
 
             # Criar HTML formal
             html_output = create_html_rational(produto, ia_content)

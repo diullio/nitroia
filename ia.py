@@ -2,7 +2,6 @@ import os
 import streamlit as st
 from langchain_community.chat_models.openai import ChatOpenAI
 from langchain.schema import SystemMessage, HumanMessage
-from langchain.callbacks import get_openai_callback
 from datetime import datetime
 
 # Acessar a chave da API a partir do Streamlit Secrets Manager
@@ -67,13 +66,11 @@ def nitro_chat(prompt, context):
 	
     messages_to_send = [system_message, user_message]
     
-    with get_openai_callback() as callback:
-        response = llm(messages_to_send)
-        custo = callback.total_cost
+    response = llm(messages_to_send)
     
     conteudo = response.content.replace('```html', '')
     conteudo = conteudo.replace('```', '')
-    return conteudo, custo
+    return conteudo
 
 # Função para gerar HTML formal
 def create_html_rational(product_name, content):
