@@ -58,12 +58,7 @@ def nitro_chat(prompt, context):
 	""")
     
 	###
-    user_message = HumanMessage(content=f"""
-        {prompt}
-
-        Contexto e Referências:
-        {context}
-    """)
+    user_message = HumanMessage(content=f"Contexto e Referências:: {context}\n{prompt}")
 	
     messages_to_send = [system_message, user_message]
     
