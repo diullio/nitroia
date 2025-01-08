@@ -22,9 +22,11 @@ def load_selected_files(selected_files):
     """
     all_text = ""  # Armazenar o conteúdo concatenado
 
+    racionais_directory = os.path.join(os.getcwd(), "racionais")
+
     for filename in selected_files:
         if filename.endswith(".txt"):  # Verifica se o arquivo é `.txt`
-            path_txt = os.path.join(os.getcwd(), filename)  # Caminho completo do arquivo
+            path_txt = os.path.join(racionais_directory, filename)  # Caminho completo do arquivo
             try:
                 # Lê o conteúdo do arquivo
                 with open(path_txt, 'r', encoding='utf-8') as file:
@@ -47,10 +49,13 @@ def nitro_chat(prompt, context):
         para relatórios, considerando o contexto e referências fornecidas.
                                    
         Instruções:
+        - Faça uma breve introdução sobre o tema.
         - Use o mesmo idioma da instrução dada pelo usuário.
         - Priorize o contexto fornecido para elaborar as justificativas.
         - Utilize as referências como suporte, citando-as diretamente na resposta quando necessário, e estruture ajustando a numeração e criando uma seção referências ao final do texto.
         - Seja claro, objetivo e técnico em suas respostas.
+        - Não use a expressão com base no contexto fornecido visto que esta fazendo um documento oficial.
+        - Gere a resposta em HTML.
                                    
         Sugestões:
         - Estruture a resposta de forma lógica e coesa.
@@ -65,8 +70,10 @@ def nitro_chat(prompt, context):
     with get_openai_callback() as callback:
         response = llm(messages_to_send)
         custo = callback.total_cost
-        
-    return response.content, custo
+    
+    conteudo = response.content.replace('```html', '')
+    conteudo = conteudo.replace('```', '')
+    return conteudo, custo
 
 # Função para gerar HTML formal
 def create_html_rational(product_name, content):
@@ -86,6 +93,7 @@ def create_html_rational(product_name, content):
                 font-family: Arial, sans-serif;
                 line-height: 1.6;
                 margin: 20px;
+                font-size: 12pt;
             }}
             .header {{
                 background-color: #f2f2f2;
@@ -93,9 +101,9 @@ def create_html_rational(product_name, content):
                 border: 1px solid #ddd;
                 margin-bottom: 20px;
             }}
-            .header h1 {{
+            h1 {{
                 text-align: center;
-                font-size: 24px;
+                font-size: 14pt;
                 margin-bottom: 10px;
             }}
             .header table {{
@@ -118,7 +126,6 @@ def create_html_rational(product_name, content):
     </head>
     <body>
         <div class="header">
-            <h1>Justificativa Técnica</h1>
             <table>
                 <tr>
                     <th>Produto</th>
@@ -131,8 +138,7 @@ def create_html_rational(product_name, content):
             </table>
         </div>
         <div class="content">
-            <h2>Racional:</h2>
-            <p>{content}</p>
+            {content}
         </div>
     </body>
     </html>
