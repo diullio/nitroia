@@ -213,8 +213,8 @@ def load_selected_files(selected_files):
                     content = file.read()
 
                 # Adiciona um título baseado no nome do arquivo
-                title = f"\\n{filename.upper()}:"
-                all_text += title + "\\n" + content + "\\n\\n"
+                title = f"{filename.upper()}:"
+                all_text += title + " " + content + "  "
             except Exception as e:
                 print(f"Erro ao processar o arquivo {filename}: {e}")
     
@@ -319,7 +319,7 @@ def create_html_rational(product_name, content):
         </div>
         <div class="content">
             <h2>Racional:</h2>
-            <p>{content.replace('\\n', '<br>')}</p>
+            <p>{content}</p>
         </div>
     </body>
     </html>
