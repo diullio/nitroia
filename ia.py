@@ -1,6 +1,6 @@
 import os
 import streamlit as st
-from langchain.chat_models import ChatOpenAI
+from langchain_community.chat_models.openai import ChatOpenAI
 from langchain.schema import SystemMessage, HumanMessage
 from langchain.callbacks import get_openai_callback
 from datetime import datetime
