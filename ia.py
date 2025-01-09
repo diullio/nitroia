@@ -48,7 +48,7 @@ def nitro_chat(prompt, context):
         para relatórios, considerando o contexto e referências fornecidas.
                                    
         Instruções:
-        - Faça uma breve introdução sobre o tema.
+        - Você está dando continuidade para um texto de racional técnico.
         - Use o mesmo idioma da instrução dada pelo usuário.
         - Priorize o contexto fornecido para elaborar as justificativas.
         - Utilize as referências como suporte, citando-as diretamente na resposta quando necessário, e estruture ajustando a numeração e criando uma seção referências ao final do texto.
