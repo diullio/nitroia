@@ -137,11 +137,17 @@ def main():
                 else:
                     st.error(f"Erro ao tentar remover o IFA '{ifa_para_remover}'.")
 
-    risco_pa = st.text_input("Risco Global PA", key="risco_pa")
-
     ## IA PARA RACIONAIS
     st.subheader('Gerador de Racional')
     # Obtém a lista de arquivos .txt na pasta atual
+    risco_pa = st.text_input("Risco Global PA", key="risco_pa")
+    
+    # Valida e converte risco_pa para número
+    if risco_pa.isdigit():
+        risco_pa = int(risco_pa)
+    else:
+        st.error("Insira um valor numérico válido para o Risco Global PA.")
+
     racionais_directory = os.path.join(os.getcwd(), "racionais")
     files_in_directory = [f for f in os.listdir(racionais_directory) if f.endswith(".txt")]
     # Exibe checkboxes para cada arquivo

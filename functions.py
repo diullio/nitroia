@@ -168,9 +168,6 @@ def html_AR(dados, produto, dados_anexos, elaborador, ia_racional, referencia, r
 
     maior_risco_ifa = 0
 
-    # Garante que risco_pa é um inteiro
-    risco_pa = int(risco_pa)
-
     # Itera sobre os itens em 'dados' para encontrar o maior risco
     for item in dados:
         # Verifica se 'risco' está presente e é um número
