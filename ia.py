@@ -73,22 +73,52 @@ def nitro_chat(prompt, context):
     conteudo = conteudo.replace('```', '')
     return conteudo
 
-def renumerar_referencias(texto, inicio=8):
+def ajustar_referencias_html(html, inicio=8):
     """
-    Ajusta a numeração das referências em um texto para começar de um número específico.
+    Ajusta a numeração e o formato das referências no HTML, alterando:
+    - No texto: de "(1)" para "[1]".
+    - No tópico "Referências": de "1." para "[1]".
 
     Args:
-        texto (str): O texto contendo as referências numeradas.
+        html (str): O HTML contendo as referências numeradas.
         inicio (int): O número inicial para a renumeração das referências.
 
     Returns:
-        str: Texto com as referências renumeradas.
+        str: HTML com as referências ajustadas.
     """
-    # Encontrar todas as referências numeradas no padrão (1), (2), etc.
-    referencias = re.findall(r'\((\d+)\)', texto)
+    # Ajustar as referências no texto (de "(1)" para "[1]")
+    referencias_texto = re.findall(r'\((\d+)\)', html)
+    for i, ref in enumerate(referencias_texto, start=inicio):
+        html = re.sub(rf'\({ref}\)', f'[{i}]', html, count=1)
 
-    # Substituir cada referência com a nova numeração a partir do número inicial
-    for i, ref in enumerate(referencias, start=inicio):
-        texto = re.sub(rf'\({ref}\)', f'({i})', texto, count=1)
+    # Ajustar a numeração no tópico "Referências" (de "1." para "[1]")
+    referencias_lista = re.findall(r'<p>(\d+)\.', html)
+    for i, ref in enumerate(referencias_lista, start=inicio):
+        html = re.sub(rf'<p>{ref}\.', f'<p>[{i}]', html, count=1)
+
+    return html
+
+def fragmentar_html_referencias(html):
+    """
+    Fragmenta o HTML em duas partes: o texto antes de "<p>Referências:</p>"
+    e as referências após ele. Remove o elemento "<p>Referências:</p>".
+
+    Args:
+        html (str): O HTML contendo as referências.
+
+    Returns:
+        tuple: Uma tupla com duas strings:
+            - Parte do texto antes de "<p>Referências:</p>".
+            - Parte das referências após "<p>Referências:</p>".
+    """
+    # Dividir o HTML no ponto de "<p>Referências:</p>"
+    partes = html.split("<p>Referências:</p>", 1)
     
-    return texto
+    # Verificar se o split resultou em duas partes
+    if len(partes) == 2:
+        texto_anterior = partes[0].strip()  # Parte antes de "Referências"
+        referencias = partes[1].strip()    # Parte das referências
+        return texto_anterior, referencias
+    else:
+        # Caso não exista "<p>Referências:</p>" no HTML
+        return html.strip(), ""

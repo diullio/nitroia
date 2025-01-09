@@ -2,7 +2,7 @@ import os
 import streamlit as st
 import pandas as pd
 from functions import localizar_ppb, gerar_html, criar_quadro, criar_texto, html_AR
-from ia import load_selected_files, nitro_chat
+from ia import load_selected_files, nitro_chat, ajustar_referencias_html, fragmentar_html_referencias
 
 # Inicializa o estado global para armazenar dados
 if "dados" not in st.session_state:
@@ -153,11 +153,10 @@ def main():
             prompt = f'''Elabore um racional com base no contexto fornecido e referencie o texto. Ao final faça uma conclusão com base no racional abordado sem gerar um novo topico finalizando meu racional, considerando que para eu ter formação de nitrosaminas eu preciso ter Aminas, Nitrito e Meio reacional ácido, caso seja possivel mitigar com os racionais selecionados gere uma conclusão de risco baixo.
             '''
             ia_content = nitro_chat(prompt, context)
-            st.write(ia_content)
+            ia_content_ref = ajustar_referencias_html(ia_content)
+            ia_racional, referencia = fragmentar_html_referencias(ia_content_ref)         
 
-
-
-            html = html_AR(st.session_state.dados, produto, st.session_state.anexos, elaborador)
+            html = html_AR(st.session_state.dados, produto, st.session_state.anexos, elaborador, ia_racional, referencia)
             st.download_button(
                 label="Baixar Avaliação de Risco",
                 data=html,
