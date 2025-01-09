@@ -155,7 +155,7 @@ def int_to_roman(n):
     return result
 
 #Funcao para gerar analise de risco
-def html_AR(dados, produto, dados_anexos, elaborador):
+def html_AR(dados, produto, dados_anexos, elaborador, ia_racional, referencia):
     env = Environment(loader=FileSystemLoader('.'))
     # Registrar o filtro 'romanize'
     env.filters['romanize'] = int_to_roman
@@ -173,7 +173,9 @@ def html_AR(dados, produto, dados_anexos, elaborador):
             produto=produto,
             num_range=num_range,
             dados_anexos=dados_anexos,
-            elaborador=elaborador
+            elaborador=elaborador,
+            ia_racional=ia_racional, 
+            referencia=referencia
         )
         return html
     except Exception as e:
