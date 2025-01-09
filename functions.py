@@ -166,15 +166,24 @@ def html_AR(dados, produto, dados_anexos, elaborador, ia_racional, referencia, r
         if dado["nitrosamina"]:  # Verifica se há nitrosamina
             dado["predicao"] = len(dados) + 2 + i  # PA e indice
 
-    # Define o maior risco encontrado
-    if dados:
-        # Calcula o maior risco entre os IFAs, garantindo que cada item tenha a chave 'risco'
-        maior_risco_ifa = max(item.get('risco', 0) for item in dados)
-    else:
-        maior_risco_ifa = 0  # Define 0 como risco padrão se 'dados' estiver vazio
+    maior_risco_ifa = 0
 
-    # Calcula o maior risco global, considerando o PA
-    risco_final = max(maior_risco_ifa, risco_pa)
+    # Garante que risco_pa é um inteiro
+    risco_pa = int(risco_pa) if isinstance(risco_pa, (int, float)) else 0
+
+    # Itera sobre os itens em 'dados' para encontrar o maior risco
+    for item in dados:
+        # Verifica se 'risco' está presente e é um número
+        if 'risco' in item and isinstance(item['risco'], (int, float)):
+            risco_atual = int(item['risco'])  # Garante que o valor é um inteiro
+            if risco_atual > maior_risco_ifa:
+                maior_risco_ifa = risco_atual
+
+    # Compara o maior risco dos IFAs com o risco do PA
+    if maior_risco_ifa > risco_pa:
+        risco_final = maior_risco_ifa
+    else:
+        risco_final = risco_pa
 
     template = env.get_template("ar_model.html")
     try:
