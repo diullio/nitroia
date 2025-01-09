@@ -167,10 +167,14 @@ def html_AR(dados, produto, dados_anexos, elaborador, ia_racional, referencia, r
             dado["predicao"] = len(dados) + 2 + i  # PA e indice
 
     # Define o maior risco encontrado
-    risco_final = max(
-        max(item['risco'] for item in dados),  # Maior risco entre todos os IFAs
-        risco_pa  # Risco do PA
-    )
+    if dados:
+        # Calcula o maior risco entre os IFAs, garantindo que cada item tenha a chave 'risco'
+        maior_risco_ifa = max(item.get('risco', 0) for item in dados)
+    else:
+        maior_risco_ifa = 0  # Define 0 como risco padrão se 'dados' estiver vazio
+
+    # Calcula o maior risco global, considerando o PA
+    risco_final = max(maior_risco_ifa, risco_pa)
 
     template = env.get_template("ar_model.html")
     try:
@@ -182,7 +186,7 @@ def html_AR(dados, produto, dados_anexos, elaborador, ia_racional, referencia, r
             elaborador=elaborador,
             ia_racional=ia_racional, 
             referencia=referencia,
-            risco_pa=int(risco_pa),
+            risco_pa=risco_pa,
             risco_final=risco_final
         )
         return html
