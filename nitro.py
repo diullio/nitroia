@@ -163,17 +163,19 @@ def main():
             # Criar HTML formal
             html_output = create_html_rational(produto, ia_content)
 
+            file_name = f"racional_{produto}.html"
+
             # Salvar o arquivo HTML
-            with open(f"racional_{produto}.html", "w", encoding="utf-8") as html_file:
+            with open(file_name, "w", encoding="utf-8") as html_file:
                 html_file.write(html_output)
 
             # Exibir mensagem de sucesso e link para download
             st.success("Racional gerado com sucesso!")
-            with open("racional_{produto}.html", "rb") as file:
+            with open(file_name, "rb") as file:
                 st.download_button(
                     label="Baixar Racional",
                     data=file,
-                    file_name="racional_{produto}.html",
+                    file_name="file_name",
                     mime="text/html"
                 )
 
