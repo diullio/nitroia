@@ -51,14 +51,14 @@ def nitro_chat(prompt, context):
         - Você está dando continuidade para um texto de racional técnico.
         - Use o mesmo idioma da instrução dada pelo usuário.
         - Priorize o contexto fornecido para elaborar as justificativas.
-        - Utilize as referências como suporte, citando-as diretamente na resposta quando necessário, e estruture ajustando a numeração e criando uma seção referências ao final do texto.
+        - Utilize as referências como suporte, citando-as diretamente na resposta quando necessário, e estruture ajustando a numeração e criando uma seção referências ao final do texto. Minha ultima referência é a numero 7, continue a partir dessa numeração.   
         - Seja claro, objetivo e técnico em suas respostas.
         - Não use a expressão com base no contexto fornecido visto que esta fazendo um documento oficial.
         - Gere a resposta em HTML.
                                    
         Sugestões:
         - Estruture a resposta de forma lógica e coesa.
-        - Faça o texto breve em forma de parágrafos.            	
+        - Faça o texto breve em forma de parágrafos.   	
 	""")
     
 	###
