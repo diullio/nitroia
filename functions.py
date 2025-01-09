@@ -166,6 +166,12 @@ def html_AR(dados, produto, dados_anexos, elaborador, ia_racional, referencia, r
         if dado["nitrosamina"]:  # Verifica se há nitrosamina
             dado["predicao"] = len(dados) + 2 + i  # PA e indice
 
+    # Define o maior risco encontrado
+    risco_final = max(
+        max(item['risco'] for item in dados),  # Maior risco entre todos os IFAs
+        risco_pa  # Risco do PA
+    )
+
     template = env.get_template("ar_model.html")
     try:
         html = template.render(
@@ -176,7 +182,8 @@ def html_AR(dados, produto, dados_anexos, elaborador, ia_racional, referencia, r
             elaborador=elaborador,
             ia_racional=ia_racional, 
             referencia=referencia,
-            risco_pa=int(risco_pa)
+            risco_pa=int(risco_pa),
+            risco_final=risco_final
         )
         return html
     except Exception as e:

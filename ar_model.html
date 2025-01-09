@@ -578,8 +578,8 @@
 
 <p>
     Embora existam fatores relacionados à formação de nitrosaminas, o risco para a presença destes compostos no medicamento foi classificado como 
-    {{ 'alto' if risco > 11 else 'baixo' }}. 
-    {% if risco > 11 %}
+    {{ 'baixo' if risco_final <= 11 else 'médio' if risco_final <= 26 else 'alto' }}.
+    {% if risco_final > 11 %}
         Este resultado evidencia a necessidade de implementar ações corretivas e mitigatórias adicionais para reduzir os riscos identificados. 
         O arcabouço de informações teóricas apresentadas neste relatório aponta para a importância de um monitoramento nos processos de fabricação e controle de qualidade.
     {% else %}
