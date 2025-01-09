@@ -2,7 +2,7 @@ import os
 import streamlit as st
 import pandas as pd
 from functions import localizar_ppb, gerar_html, criar_quadro, criar_texto, html_AR
-from ia import load_selected_files, nitro_chat, create_html_rational
+from ia import load_selected_files, nitro_chat
 
 # Inicializa o estado global para armazenar dados
 if "dados" not in st.session_state:
@@ -145,43 +145,18 @@ def main():
     # Exibe checkboxes para cada arquivo
     selected_files = st.multiselect("Selecione os itens que deseja considerar:", files_in_directory)
     
-    # Botão para gerar racional
-    if st.button("Gerar Racional"):
-        if not produto:
-            st.warning("Por favor, insira o nome do produto.")
-        elif not selected_files:
-            st.warning("Por favor, selecione ao menos um arquivo.")
-        else:
-            # Carregar conteúdo dos arquivos selecionados
-            context = load_selected_files(selected_files)
-            prompt = f'''Elabore um racional com base no contexto fornecido e referencie o texto. Ao final faça uma conclusão com base no racional abordado sem gerar um novo topico finalizando meu racional, considerando que para eu ter formação de nitrosaminas eu preciso ter Aminas, Nitrito e Meio reacional ácido, caso seja possivel mitigar com os racionais selecionados gere uma conclusão de risco baixo.
-            '''
-            ia_content = nitro_chat(prompt, context)
-
-            # Criar HTML formal
-            html_output = create_html_rational(produto, ia_content)
-
-            file_name = f"racional_{produto}.html"
-
-            # Salvar o arquivo HTML
-            with open(file_name, "w", encoding="utf-8") as html_file:
-                html_file.write(html_output)
-
-            # Exibir mensagem de sucesso e link para download
-            st.success("Racional gerado com sucesso!")
-            with open(file_name, "rb") as file:
-                st.download_button(
-                    label="Baixar Racional",
-                    data=file,
-                    file_name=file_name,
-                    mime="text/html"
-                )
-
-
     if st.button("Gerar Avaliação de Risco"):
         if not produto or not st.session_state.dados:
             st.error("Por favor, insira o nome do produto e adicione pelo menos um IFA.")
         else:
+            context = load_selected_files(selected_files)
+            prompt = f'''Elabore um racional com base no contexto fornecido e referencie o texto. Ao final faça uma conclusão com base no racional abordado sem gerar um novo topico finalizando meu racional, considerando que para eu ter formação de nitrosaminas eu preciso ter Aminas, Nitrito e Meio reacional ácido, caso seja possivel mitigar com os racionais selecionados gere uma conclusão de risco baixo.
+            '''
+            ia_content = nitro_chat(prompt, context)
+            st.write(ia_content)
+
+
+
             html = html_AR(st.session_state.dados, produto, st.session_state.anexos, elaborador)
             st.download_button(
                 label="Baixar Avaliação de Risco",

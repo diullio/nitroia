@@ -3,6 +3,7 @@ import streamlit as st
 from langchain_community.chat_models.openai import ChatOpenAI
 from langchain.schema import SystemMessage, HumanMessage
 from datetime import datetime
+import re
 
 # Acessar a chave da API a partir do Streamlit Secrets Manager
 openai_api_key = st.secrets["openai"]["api_key"]
@@ -55,7 +56,6 @@ def nitro_chat(prompt, context):
         - Seja claro, objetivo e técnico em suas respostas.
         - Não use a expressão com base no contexto fornecido visto que esta fazendo um documento oficial.
         - Gere a resposta em HTML.
-        - Ao final resete a numeração das referencias partindo do numero 8.
                                    
         Sugestões:
         - Estruture a resposta de forma lógica e coesa.
@@ -73,73 +73,22 @@ def nitro_chat(prompt, context):
     conteudo = conteudo.replace('```', '')
     return conteudo
 
-# Função para gerar HTML formal
-def create_html_rational(product_name, content):
+def renumerar_referencias(texto, inicio=8):
     """
-    Cria um HTML estilizado para o racional.
-    """
-    date_today = datetime.now().strftime("%d/%m/%Y")
-    html_content = f"""
-    <!DOCTYPE html>
-    <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Racional</title>
-        <style>
-            body {{
-                font-family: Arial, sans-serif;
-                line-height: 1.6;
-                margin: 20px;
-                font-size: 12pt;
-            }}
-            .header {{
-                background-color: #f2f2f2;
-                padding: 20px;
-                border: 1px solid #ddd;
-                margin-bottom: 20px;
-            }}
-            h1 {{
-                text-align: center;
-                font-size: 14pt;
-                margin-bottom: 10px;
-            }}
-            .header table {{
-                width: 100%;
-                border-collapse: collapse;
-            }}
-            .header table th, .header table td {{
-                border: 1px solid #ddd;
-                padding: 8px;
-                text-align: left;
-            }}
-            .content {{
-                margin-top: 20px;
-            }}
-            .content h2 {{
-                color: #333;
-                margin-bottom: 10px;
-            }}
-        </style>
-    </head>
-    <body>
-        <div class="header">
-            <table>
-                <tr>
-                    <th>Produto</th>
-                    <td>{product_name}</td>
-                </tr>
-                <tr>
-                    <th>Data</th>
-                    <td>{date_today}</td>
-                </tr>
-            </table>
-        </div>
-        <div class="content">
-            {content}
-        </div>
-    </body>
-    </html>
-    """
-    return html_content
+    Ajusta a numeração das referências em um texto para começar de um número específico.
 
+    Args:
+        texto (str): O texto contendo as referências numeradas.
+        inicio (int): O número inicial para a renumeração das referências.
+
+    Returns:
+        str: Texto com as referências renumeradas.
+    """
+    # Encontrar todas as referências numeradas no padrão (1), (2), etc.
+    referencias = re.findall(r'\((\d+)\)', texto)
+
+    # Substituir cada referência com a nova numeração a partir do número inicial
+    for i, ref in enumerate(referencias, start=inicio):
+        texto = re.sub(rf'\({ref}\)', f'({i})', texto, count=1)
+    
+    return texto
