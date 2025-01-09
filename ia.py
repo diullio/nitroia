@@ -58,7 +58,7 @@ def nitro_chat(prompt, context):
                                    
         Sugestões:
         - Estruture a resposta de forma lógica e coesa.
-        - Se necessário, divida a resposta em tópicos ou parágrafos.            	
+        - Faça o texto breve em forma de parágrafos.            	
 	""")
     
 	###

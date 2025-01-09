@@ -154,7 +154,7 @@ def main():
         else:
             # Carregar conteúdo dos arquivos selecionados
             context = load_selected_files(selected_files)
-            prompt = f'''Elabore um racional com base no contexto fornecido e referencie o texto. Ao final faça uma conclusão com base no racioanl abordado, considerando que para eu ter formação de nitrosaminas eu preciso ter Aminas, Nitrito e Meio reacional ácido, caso seja possivel mitigar com os racionais selecionados gere uma conclusão de risco baixo.
+            prompt = f'''Elabore um racional com base no contexto fornecido e referencie o texto. Ao final faça uma conclusão com base no racional abordado, considerando que para eu ter formação de nitrosaminas eu preciso ter Aminas, Nitrito e Meio reacional ácido, caso seja possivel mitigar com os racionais selecionados gere uma conclusão de risco baixo.
             Abaixo segue meus dados de IFA, nitrosaminas potenciais e algumas propriedades como pKa e limites para ajuda na elaboração dos racionais.
             {st.session_state.dados}
             '''
