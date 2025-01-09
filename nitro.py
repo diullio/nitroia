@@ -175,7 +175,7 @@ def main():
                 st.download_button(
                     label="Baixar Racional",
                     data=file,
-                    file_name="file_name",
+                    file_name=file_name,
                     mime="text/html"
                 )
 
