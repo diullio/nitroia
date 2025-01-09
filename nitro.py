@@ -137,6 +137,8 @@ def main():
                 else:
                     st.error(f"Erro ao tentar remover o IFA '{ifa_para_remover}'.")
 
+    risco_pa = st.text_input("Risco Global PA", key="risco_pa")
+
     ## IA PARA RACIONAIS
     st.subheader('Gerador de Racional')
     # Obtém a lista de arquivos .txt na pasta atual
@@ -144,9 +146,10 @@ def main():
     files_in_directory = [f for f in os.listdir(racionais_directory) if f.endswith(".txt")]
     # Exibe checkboxes para cada arquivo
     selected_files = st.multiselect("Selecione os itens que deseja considerar:", files_in_directory)
-    
+        
+
     if st.button("Gerar Avaliação de Risco"):
-        if not produto or not st.session_state.dados:
+        if not produto or not st.session_state.dados or not risco_pa:
             st.error("Por favor, insira o nome do produto e adicione pelo menos um IFA.")
         else:
             context = load_selected_files(selected_files)
@@ -156,7 +159,7 @@ def main():
             ia_content_ref = ajustar_referencias_html(ia_content)
             ia_racional, referencia = fragmentar_html_referencias(ia_content_ref)         
 
-            html = html_AR(st.session_state.dados, produto, st.session_state.anexos, elaborador, ia_racional, referencia)
+            html = html_AR(st.session_state.dados, produto, st.session_state.anexos, elaborador, ia_racional, referencia, risco_pa)
             st.download_button(
                 label="Baixar Avaliação de Risco",
                 data=html,
