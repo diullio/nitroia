@@ -176,7 +176,7 @@ def html_AR(dados, produto, dados_anexos, elaborador, ia_racional, referencia, r
             elaborador=elaborador,
             ia_racional=ia_racional, 
             referencia=referencia,
-            risco_pa=risco_pa
+            risco_pa=int(risco_pa)
         )
         return html
     except Exception as e:
