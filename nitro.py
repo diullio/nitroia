@@ -169,11 +169,11 @@ def main():
 
             # Exibir mensagem de sucesso e link para download
             st.success("Racional gerado com sucesso!")
-            with open("Racional.html", "rb") as file:
+            with open("racional_{produto}.html", "rb") as file:
                 st.download_button(
                     label="Baixar Racional",
                     data=file,
-                    file_name="Racional.html",
+                    file_name="racional_{produto}.html",
                     mime="text/html"
                 )
 
