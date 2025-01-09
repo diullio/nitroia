@@ -326,8 +326,7 @@
 </table>
 <br>
 <br>
-<br>
-<br>
+
 <h1><strong>2. Objetivo</strong></h1>
 
 <p>
@@ -569,7 +568,7 @@
 <p>
     Para o produto acabado, o risco global encontrado foi de {{ risco_pa }}, 
     categorizando o risco como {{ 'baixo' if risco_pa <= 11 else 'médio' if risco_pa <= 26 else 'alto' }}. 
-    {{ "Este resultado destaca a necessidade de atenção para ações mitigatórias adicionais visando assegurar o controle da formação de nitrosaminas no produto final." if risco_pa > 11 else "" }} 
+    {{ "Este resultado destaca a necessidade de atenção para ações mitigatórias adicionais visando assegurar o controle da formação de nitrosaminas no produto." if risco_pa > 11 else "" }} 
 </p>
 
 {{ ia_racional }}
