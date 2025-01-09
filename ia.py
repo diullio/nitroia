@@ -112,7 +112,9 @@ def fragmentar_html_referencias(html):
             - Parte das referências após "<p>Referências:</p>".
     """
     # Dividir o HTML no ponto de "<p>Referências:</p>"
-    partes = html.split("<p>Referências:</p>", 1)
+    padrao_referencias = r"<p>Referências:?</p>|Referências:?"
+
+    partes = re.split(padrao_referencias, html, maxsplit=1, flags=re.IGNORECASE)
     
     # Verificar se o split resultou em duas partes
     if len(partes) == 2:
