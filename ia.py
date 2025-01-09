@@ -118,6 +118,7 @@ def fragmentar_html_referencias(html):
     if len(partes) == 2:
         texto_anterior = partes[0].strip()  # Parte antes de "Referências"
         referencias = partes[1].strip()    # Parte das referências
+        referencias = referencias.replace('<p>', '<p style="text-indent: 0">')
         return texto_anterior, referencias
     else:
         # Caso não exista "<p>Referências:</p>" no HTML
