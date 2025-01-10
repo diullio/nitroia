@@ -557,8 +557,8 @@
         Para o IFA {{ item.ifa }} do fabricante {{ item.fabricante }}, o risco global calculado foi de {{ item.risco }}{% if not item.nitrosamina %},
         o que categoriza um risco {{ 'baixo' if item.risco <= 11 else 'médio' if item.risco <= 26 else 'alto' }} para a formação de nitrosaminas. {% else %}. {% endif %}
         {% if item.nitrosamina %}
-            Conforme Anexo {{ item.predicao | romanize }}, foi necessário realizar predição teórica para a impureza {{ item.nitrosamina }}.
-            A predição teórica calculada ficou 
+            Conforme Anexo {{ item.predicao | romanize }}, a predição teórica realizada para a impureza {{ item.nitrosamina }}
+            ficou 
             {{ "abaixo de 10% da especificação" if item.risco_nitrosamina == "baixo" else "acima de 10% da especificação" }},
             demonstrando que o risco para formação de nitrosaminas é {{ "baixo" if item.risco_nitrosamina == "baixo" else "alto" }}.
         {% endif %}
