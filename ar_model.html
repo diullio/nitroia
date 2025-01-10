@@ -391,7 +391,7 @@
 <p style="line-height: 1">PP: População de pacientes;</p>
 <p style="line-height: 1">LA: Local Ação.</p>
 
-<p>A probabilidade de ocorrência foi classificada na faixa de 1 a 5. Quando as informações fornecidas são insuficientes e as possíveis causas não pudessem ser devidamente avaliadas, estas seriam classificadas com o maior nível de probabilidade. Para a detectabilidade, foram definidos três níveis (de 1 a 3), sendo que, em casos de informações insuficientes, o nível de detectabilidade mais alto será adotado.</p>
+<p>A probabilidade de ocorrência foi classificada na faixa de 1 a 5. Para a detectabilidade, foram definidos três níveis (de 1 a 3).</p>
 <p>Após avaliação de todos os parâmetros de probabilidade, severidade e detectabilidade o nível de risco associado às falhas identificadas no FMEA é obtido pelo cálculo do número de prioridade de risco (NPR), representado na equação abaixo:</p>
 
 <p style="text-align: center;">𝑁𝑃𝑅 = 𝑆 𝑥 𝑃 𝑥 𝐷</p>
@@ -545,7 +545,7 @@
 <h1><strong>5. Resultados Observados</strong></h1>
 
 <p>
-    Os resultados foram estabelecidos e estão disponíveis no(s) Anexo(s):
+    Os resultados foram estabelecidos e estão disponíveis nos Anexos:
     {% for i in num_range %}
         {{ i | romanize }}{% if not loop.last %}, {% else %} {% endif %} 
     {% endfor %} 
@@ -554,10 +554,10 @@
 
 {% for item in dados %}
     <p>
-        Para o IFA {{ item.ifa }} do fabricante {{ item.fabricante }}, o risco global calculado foi de {{ item.risco }},
-        o que categoriza um risco {{ 'baixo' if item.risco <= 11 else 'médio' if item.risco <= 26 else 'alto' }} para a formação de nitrosaminas.
+        Para o IFA {{ item.ifa }} do fabricante {{ item.fabricante }}, o risco global calculado foi de {{ item.risco }}{% if item.nitrosamina %},
+        o que categoriza um risco {{ 'baixo' if item.risco <= 11 else 'médio' if item.risco <= 26 else 'alto' }} para a formação de nitrosaminas. {% else %}. {% endif %}
         {% if item.nitrosamina %}
-            Conforme anexo {{ item.predicao | romanize }}, foi necessário realizar predição teórica para a impureza {{ item.nitrosamina }}.
+            Conforme Anexo {{ item.predicao | romanize }}, foi necessário realizar predição teórica para a impureza {{ item.nitrosamina }}.
             A predição teórica calculada ficou 
             {{ "abaixo de 10% da especificação" if item.risco_nitrosamina == "baixo" else "acima de 10% da especificação" }},
             demonstrando que o risco para formação de nitrosaminas é {{ "baixo" if item.risco_nitrosamina == "baixo" else "alto" }}.
@@ -566,7 +566,7 @@
 {% endfor %}
 
 <p>
-    Para o produto acabado, o risco global encontrado foi de {{ risco_pa }}, 
+    Para o(s) produto(s) acabado(s) {{ produto_acabado }}, o risco global encontrado foi de {{ risco_pa }}, 
     categorizando o risco como {{ 'baixo' if risco_pa <= 11 else 'médio' if risco_pa <= 26 else 'alto' }}. 
     {{ "Este resultado destaca a necessidade de atenção para ações mitigatórias adicionais visando assegurar o controle da formação de nitrosaminas no produto." if risco_pa > 11 else "" }} 
 </p>

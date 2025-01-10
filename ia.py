@@ -60,6 +60,7 @@ def nitro_chat(prompt, context):
         Sugestões:
         - Estruture a resposta de forma lógica e coesa.
         - Faça o texto breve em forma de parágrafos, não gere tópicos nem títulos.   	
+        - Sempre deixe siglas como NDMA, NDEA, e outras.. em letras maiúsculas.
 	""")
     
 	###
