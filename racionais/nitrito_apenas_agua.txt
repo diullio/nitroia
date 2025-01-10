@@ -1,4 +1,4 @@
-Com base nas análises das matérias-primas realizadas pelo fabricante, no processo de fabricação do IFA, nenhum nitrito é utilizado para na produção dessas matérias-primas. Portanto, o risco de introduzir nitrito a partir dessas matérias-primas seria a nível de traços advindo da água utilizada no processo, e devido à ausência de pH ácido, não teríamos a conversão desses nitritos e nitratos para uma reação de nitrosação. (1)
+Nenhum nitrito é utilizado para no processo. Portanto, o risco de introduzir nitrito seria a nível de traços advindo da água utilizada no processo, e devido à ausência de pH ácido, não teríamos a conversão desses nitritos e nitratos para uma reação de nitrosação. (1)
 Bibliografia
 1. ASHWORTH, I. W.; DIRAT, O.; TEASDALE, A.; WHITING, M. Potential for the Formation of N Nitrosamines during the Manufacture of Active Pharmaceutical Ingredients: An Assessment of the Risk Posed by Trace Nitrite in Water. s.l. : Organic Process Research & Development, 2020.
 

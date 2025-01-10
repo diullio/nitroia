@@ -1,4 +1,4 @@
-Em meios reacionais de pH ácido e na presença dos sulfitos, os nitritos seriam completamente convertidos em N2O, gás que seria liberado no processo produtivo (1). Conforme indicado pelo fabricante, visto que quantidade desses reagentes redutores é grande, até mesmo em caso de formação de nitrosaminas, essas seriam reduzidas, visto que a nitrosamina é oxidante.
+Em meios reacionais de pH ácido e na presença dos sulfitos, os nitritos seriam completamente convertidos em N2O, gás que seria liberado no processo produtivo (1). Visto que a quantidade desses reagentes redutores é grande, até mesmo em caso de formação de nitrosaminas, essas seriam reduzidas, visto que a nitrosamina é oxidante.
 Bibliografia
 1. SUSIANTO, M. PETRISSANS, AND A. ZOULALIAN. Influence of the pH on the Interactions between Nitrite and Sulfite Ions. Kinetic of the Reaction at pH 4 and 5. 2001.
 
