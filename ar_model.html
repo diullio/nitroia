@@ -554,7 +554,7 @@
 
 {% for item in dados %}
     <p>
-        Para o IFA {{ item.ifa }} do fabricante {{ item.fabricante }}, o risco global calculado foi de {{ item.risco }}{% if item.nitrosamina %},
+        Para o IFA {{ item.ifa }} do fabricante {{ item.fabricante }}, o risco global calculado foi de {{ item.risco }}{% if not item.nitrosamina %},
         o que categoriza um risco {{ 'baixo' if item.risco <= 11 else 'médio' if item.risco <= 26 else 'alto' }} para a formação de nitrosaminas. {% else %}. {% endif %}
         {% if item.nitrosamina %}
             Conforme Anexo {{ item.predicao | romanize }}, foi necessário realizar predição teórica para a impureza {{ item.nitrosamina }}.
