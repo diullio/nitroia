@@ -158,12 +158,16 @@ def main():
         if not produto or not st.session_state.dados or not risco_pa:
             st.error("Por favor, insira o nome do produto e adicione pelo menos um IFA.")
         else:
-            context = load_selected_files(selected_files)
-            prompt = f'''Elabore um racional com base no contexto fornecido e referencie o texto. Ao final faça uma conclusão com base no racional abordado sem gerar um novo topico finalizando meu racional, considerando que para eu ter formação de nitrosaminas eu preciso ter Aminas, Nitrito e Meio reacional ácido, caso seja possivel mitigar com os racionais selecionados gere uma conclusão de risco baixo.
-            '''
-            ia_content = nitro_chat(prompt, context)
-            ia_content_ref = ajustar_referencias_html(ia_content)
-            ia_racional, referencia = fragmentar_html_referencias(ia_content_ref)         
+            if selected_files:
+                context = load_selected_files(selected_files)
+                prompt = f'''Elabore um racional com base no contexto fornecido e referencie o texto. Ao final faça uma conclusão com base no racional abordado sem gerar um novo topico finalizando meu racional, considerando que para eu ter formação de nitrosaminas eu preciso ter Aminas, Nitrito e Meio reacional ácido, caso seja possivel mitigar com os racionais selecionados gere uma conclusão de risco baixo.
+                '''
+                ia_content = nitro_chat(prompt, context)
+                ia_content_ref = ajustar_referencias_html(ia_content)
+                ia_racional, referencia = fragmentar_html_referencias(ia_content_ref)  
+            else:
+                ia_racional, referencia = None, None
+
 
             html = html_AR(st.session_state.dados, produto, st.session_state.anexos, elaborador, ia_racional, referencia, risco_pa, produto)
             st.download_button(
