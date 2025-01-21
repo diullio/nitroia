@@ -78,7 +78,7 @@ def ajustar_referencias_html(html, inicio=8):
     """
     Ajusta a numeração e o formato das referências no HTML, alterando:
     - No texto: de "(1)" para "[1]".
-    - No tópico "Referências": de "1." para "[1]".
+    - No tópico "Referências": de diferentes formatos para "[n]".
 
     Args:
         html (str): O HTML contendo as referências numeradas.
@@ -92,10 +92,20 @@ def ajustar_referencias_html(html, inicio=8):
     for i, ref in enumerate(referencias_texto, start=inicio):
         html = re.sub(rf'\({ref}\)', f'[{i}]', html, count=1)
 
-    # Ajustar a numeração no tópico "Referências" (de "1." para "[1]")
-    referencias_lista = re.findall(r'<p>(\d+)\.', html)
-    for i, ref in enumerate(referencias_lista, start=inicio):
-        html = re.sub(rf'<p>{ref}\.', f'<p>[{i}]', html, count=1)
+    # Ajustar referências no tópico "Referências"
+    
+    # Tratar referências em listas <ul><li>
+    html = re.sub(r'<ul>|</ul>', '', html)  # Remove as tags <ul> e </ul>
+    referencias_lista = re.findall(r'<li>(.*?)</li>', html, re.DOTALL)
+    for i, referencia in enumerate(referencias_lista, start=inicio):
+        referencia_ajustada = f'<p>[{i}] {referencia.strip()}</p>'
+        html = html.replace(f'<li>{referencia}</li>', referencia_ajustada)
+
+    # Tratar referências como parágrafos <p> no formato "1."
+    referencias_paragrafos = re.findall(r'<p>(\d+)\.(.*?)</p>', html, re.DOTALL)
+    for i, (numero, conteudo) in enumerate(referencias_paragrafos, start=inicio):
+        referencia_ajustada = f'<p>[{i}] {conteudo.strip()}</p>'
+        html = re.sub(rf'<p>{numero}\..*?</p>', referencia_ajustada, html, count=1)
 
     return html
 
