@@ -166,7 +166,7 @@ def main():
                 ia_content_ref = ajustar_referencias_html(ia_content)
                 ia_racional, referencia = fragmentar_html_referencias(ia_content_ref)  
             else:
-                ia_racional, referencia = None, None
+                ia_racional, referencia = '', ''
 
 
             html = html_AR(st.session_state.dados, produto, st.session_state.anexos, elaborador, ia_racional, referencia, risco_pa, produto)
