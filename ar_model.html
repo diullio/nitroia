@@ -225,10 +225,10 @@
 				P&amp;D - Farmacotécnico
 			</td>
 			<td>
-				Gerente de Pesquisa e Desenvolvimento
+				Coordenador Pesquisa e Desenvolvimento
 			</td>
 			<td>
-				Albert César Machado
+				William Borges Fernandes
 			</td>
 			<td>
 				&nbsp;
@@ -337,7 +337,7 @@
 <br>
 <h1><strong>4. Escopo do estudo</strong></h1>
 
-<p>A avaliação dos potenciais riscos associados à formação de nitrosaminas no IFA e no produto acabado, foi realizada por meio de uma avaliação interdisciplinar, envolvendo os setores de Desenvolvimento Analítico, Desenvolvimento Farmacotécnico, Desenvolvimento de Embalagem, Assuntos Regulatórios, Garantia da Qualidade - Qualificação de Fornecedores, Validação de Limpeza e Garantia da Qualidade - Gerenciamento de riscos.</p>
+<p>Para a avaliação dos potenciais riscos associados à formação de nitrosaminas no IFA e no produto acabado, foi realizada por meio de uma avaliação interdisciplinar, envolvendo os setores de Desenvolvimento Analítico (P&D – Analítico), Desenvolvimento Farmacotécnico (P&D – Farmacotécnico), Garantia da Qualidade - Qualificação de Fornecedores (GQ – QF) e Garantia da Qualidade - Gerenciamento de riscos (GQ – GRQ).</p>
 <p>Para a análise e avaliação das principais fontes de contribuição para a formação de nitrosaminas foi utilizada a ferramenta <i>Failure Mode and Effect Analysis</i> (FMEA). O FMEA permite identificar os modos de falha mais críticos do processo e, ao estabelecer esses modos, estratégias de redução de risco podem ser utilizadas para eliminar, conter, reduzir ou controlar as falhas potenciais [2], [3], [4].</p>
 <p>Cada fator identificado foi classificado em relação à sua severidade (S), probabilidade (P) e detectabilidade (D). Estes parâmetros foram classificados com valores numéricos. Para descrever a severidade e probabilidade foram adotados cinco níveis numéricos, enquanto para a detectabilidade foram utilizados três níveis [5], [6].</p>
 <p>Para severidade, foram considerados quatro parâmetros. Dois destes, dose máxima diária e duração do tratamento, foram classificados em cinco níveis, de 1 a 5. Já os parâmetros locais de ação (LA) e população de pacientes (PP), foram classificados em dois níveis de severidade: 1 e 5. Adicionalmente, foi estabelecido que, sempre que as informações fornecidas fossem insuficientes e as possíveis causas não pudessem ser devidamente avaliadas, estas seriam classificadas com o maior nível de severidade.</p>
@@ -507,10 +507,24 @@
 <p>
     Os resultados foram estabelecidos e estão disponíveis nos Anexos:
     {% for i in num_range %}
-        {{ i | romanize }}{% if not loop.last %}, {% else %} {% endif %} 
-    {% endfor %} 
-	desta avaliação de risco, sendo possível verificar na tabela os itens avaliados, com os pesos a serem considerados.
+        {{ i | romanize }}{% if not loop.last %}, {% else %} {% endif %}
+    {% endfor %}
+    desta avaliação de risco, sendo possível verificar na tabela os itens avaliados, com os pesos a serem considerados. 
+
+    {% for item in dados %}
+		{% if len_ifa != 1 %}
+        Os itens considerados para avaliação da severidade do {{ item.ifa }} foram a dosagem máxima diária,
+		{% else %}
+		Os itens considerados para avaliação da severidade foram a dosagem máxima diária,
+		{% endif %}
+		classificada como {{ item.dose_maxima }}, correspondente a {% if item.dose_maxima == 1 %} menos de 1 mg{% elif item.dose_maxima == 2 %} entre 1 mg e 10 mg{% elif item.dose_maxima == 3 %} mais de 10 mg até 100 mg{% elif item.dose_maxima == 4 %} mais de 100 mg até 2 g{% elif item.dose_maxima == 5 %} acima de 2 g{% endif %}, a duração do tratamento, categorizada como {{ item.duracao_trat }}, sendo {% if item.duracao_trat == 2 %} entre 1 dia e 1 mês{% elif item.duracao_trat == 3 %} entre 1 mês e 1 ano{% elif item.duracao_trat == 4 %} entre 1 ano e 10 anos{% elif item.duracao_trat == 5 %} de 10 anos até a vida inteira{% endif %}, a forma de ação, classificada como {% if item.local_acao == 1 %} local{% elif item.local_acao == 5 %} sistêmica{% endif %}, e a população de pacientes, classificada como nível {{ item.pop_pacientes }}, indicando que o medicamento {% if item.pop_pacientes == 1 %} não é indicado para grupos vulneráveis, como neonatos, pediátricos, geriátricos, gestantes e imunossuprimidos{% elif item.pop_pacientes == 5 %} pode ser indicado para pelo menos um dos grupos vulneráveis, como neonatos, pediátricos, geriátricos, gestantes e imunossuprimidos{% endif %}. 
+    {% endfor %}
+
+    {% if len_ifa != 1 %}
+        Para o produto acabado, a severidade foi considerada com base na condição mais crítica entre os IFAs avaliados.
+    {% endif %}
 </p>
+
 
 {% for item in dados %}
     <p>

@@ -168,6 +168,7 @@ def html_AR(dados, produto, dados_anexos, elaborador, ia_racional, referencia, r
 
     maior_risco_ifa = 0
 
+    len_ifa = len(dados)
     # Itera sobre os itens em 'dados' para encontrar o maior risco
     for item in dados:
         # Verifica se 'risco' está presente e é um número
@@ -194,7 +195,8 @@ def html_AR(dados, produto, dados_anexos, elaborador, ia_racional, referencia, r
             referencia=referencia,
             risco_pa=risco_pa,
             risco_final=risco_final,
-            produto_acabado = produto_acabado
+            produto_acabado = produto_acabado,
+            len_ifa=len_ifa
         )
         return html
     except Exception as e:

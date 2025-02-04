@@ -42,6 +42,10 @@ def main():
         fabricante = st.text_input("Fabricante", key="fabricante")
         planta_fabril = st.text_input("Planta Fabril", key="planta_fabril")
         difa = st.text_input("DIFA (DMF)", key="difa")
+        dose_maxima = st.text_input("Pontuação Dose Máxima", key="dose_maxima")
+        duracao_trat = st.text_input("Pontuação duracao_trat", key="duracao_trat")
+        local_acao = st.text_input("Pontuação Local de Ação", key="local_acao")
+        pop_pacientes = st.text_input("Pontuação População de Pacientes", key="pop_pacientes")
         
         # A validação de risco agora é sempre feita
         risco = st.number_input("Risco Global Calculado", min_value=0, key="risco")
@@ -113,6 +117,10 @@ def main():
                     "risco": risco,
                     "nitrosamina": nitrosamina if nitrosamina else None,  # No caso de não haver nitrosamina
                     "risco_nitrosamina": risco_nitrosamina if risco_nitrosamina else None,  # No caso de não haver risco nitrosamina
+                    'dose_maxima': int(dose_maxima),
+                    'duracao_trat': int(duracao_trat),
+                    'local_acao': int(local_acao),
+                    'pop_pacientes': int(pop_pacientes),
             }
         )
         st.success(f"IFA '{ifa}' adicionado com sucesso!")
