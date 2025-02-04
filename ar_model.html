@@ -527,20 +527,16 @@
 				<tr>
 					<td>{{ item.ifa }}</td>
 					<td>
-						{{ item.dose_maxima }} - 
-						{% if item.dose_maxima == 1 %}< 1 mg{% elif item.dose_maxima == 2 %}1 - 10 mg{% elif item.dose_maxima == 3 %}> 10 - 100 mg{% elif item.dose_maxima == 4 %}> 100 mg - 2 g{% elif item.dose_maxima == 5 %}>2 g{% endif %}
+						{{ item.dose_maxima }} ({% if item.dose_maxima == 1 %}< 1 mg{% elif item.dose_maxima == 2 %}1 - 10 mg{% elif item.dose_maxima == 3 %}> 10 - 100 mg{% elif item.dose_maxima == 4 %}> 100 mg - 2 g{% elif item.dose_maxima == 5 %}>2 g{% endif %})
 					</td>
 					<td>
-						{{ item.duracao_trat }} - 
-						{% if item.duracao_trat == 2 %}1 dia - 1 mês{% elif item.duracao_trat == 3 %}1 mês - 1 ano{% elif item.duracao_trat == 4 %}1 ano - 10 anos{% elif item.duracao_trat == 5 %}10 anos - vida inteira{% endif %}
+						{{ item.duracao_trat }} ({% if item.duracao_trat == 2 %}1 dia - 1 mês{% elif item.duracao_trat == 3 %}1 mês - 1 ano{% elif item.duracao_trat == 4 %}1 ano - 10 anos{% elif item.duracao_trat == 5 %}10 anos - vida inteira{% endif %})
 					</td>
 					<td>
-						{{ item.local_acao }} - 
-						{% if item.local_acao == 1 %}ação local{% elif item.local_acao == 5 %}ação sistêmica{% endif %}
+						{{ item.local_acao }} ({% if item.local_acao == 1 %}ação local{% elif item.local_acao == 5 %}ação sistêmica{% endif %})
 					</td>
 					<td>
-						{{ item.pop_pacientes }} - 
-						{% if item.pop_pacientes == 1 %}Medicamento não é indicado para pacientes neonatais, pediátricos, geriátricos, gestantes e imunossuprimidos{% elif item.pop_pacientes == 5 %}Medicamento pode ser indicado para pelo menos um dos pacientes listados acima.{% endif %}
+						{{ item.pop_pacientes }} ({% if item.pop_pacientes == 1 %}Medicamento não é indicado para pacientes neonatais, pediátricos, geriátricos, gestantes e imunossuprimidos{% elif item.pop_pacientes == 5 %}Medicamento pode ser indicado para pelo menos um dos pacientes listados acima.{% endif %})
 					</td>
 				</tr>
 			{% endfor %}
