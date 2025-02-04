@@ -536,7 +536,7 @@
 						{{ item.local_acao }} ({% if item.local_acao == 1 %}ação local{% elif item.local_acao == 5 %}ação sistêmica{% endif %})
 					</td>
 					<td>
-						{{ item.pop_pacientes }} ({% if item.pop_pacientes == 1 %}Medicamento não é indicado para pacientes neonatais, pediátricos, geriátricos, gestantes e imunossuprimidos{% elif item.pop_pacientes == 5 %}Medicamento pode ser indicado para pelo menos um dos pacientes listados acima.{% endif %})
+						{{ item.pop_pacientes }} ({% if item.pop_pacientes == 1 %}medicamento não é indicado para pacientes neonatais, pediátricos, geriátricos, gestantes e imunossuprimidos{% elif item.pop_pacientes == 5 %}medicamento pode ser indicado para pelo menos um dos pacientes listados acima{% endif %})
 					</td>
 				</tr>
 			{% endfor %}
@@ -544,10 +544,8 @@
 	</table>
 </p>
 
-	<p>A partir das situações consideradas para avaliação dos parâmetros de Severidade, Detectabilidade e Probabilidade, assim como os respectivos enquadramentos, foram obtidos os riscos globais para o(s) respectivo(s) IFA(s) e produto acabado.</p>
-<p>
+	<p>A partir das situações consideradas para avaliação dos parâmetros de Severidade, Detectabilidade e Probabilidade, assim como os respectivos enquadramentos, foram obtidos os riscos globais para o(s) respectivo(s) IFA(s) e produto acabado.
 {% for item in dados %}
-    
         Para o IFA {{ item.ifa }} do fabricante {{ item.fabricante }}, o risco global calculado foi de {{ item.risco }}{% if not item.nitrosamina %},
         o que categoriza um risco {{ 'baixo' if item.risco <= 11 else 'médio' if item.risco <= 26 else 'alto' }} para a formação de nitrosaminas. {% else %}. {% endif %}
         {% if item.nitrosamina %}
@@ -557,9 +555,6 @@
             demonstrando que o risco para formação de nitrosaminas é {{ "baixo" if item.risco_nitrosamina == "baixo" else "alto" }}.
         {% endif %}
 {% endfor %}
-</p>
-
-<p>
     Para o(s) produto(s) acabado(s) {{ produto_acabado }}, o risco global encontrado foi de {{ risco_pa }}, 
     categorizando o risco como {{ 'baixo' if risco_pa <= 11 else 'médio' if risco_pa <= 26 else 'alto' }}. 
     {{ "Este resultado destaca a necessidade de atenção para ações mitigatórias adicionais visando assegurar o controle da formação de nitrosaminas no produto." if risco_pa > 11 else "" }} 
