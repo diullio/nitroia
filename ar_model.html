@@ -509,23 +509,46 @@
     {% for i in num_range %}
         {{ i | romanize }}{% if not loop.last %}, {% else %} {% endif %}
     {% endfor %}
-    desta avaliação de risco, sendo possível verificar na tabela os itens avaliados, com os pesos a serem considerados. 
+    desta avaliação de risco, sendo possível verificar na tabela os itens avaliados, com os pesos a serem considerados. Os itens considerados para avaliação do parâmetro Severidade, assim como os níveis e respectivos enquadramentos, estão apresentados no quadro abaixo.
 
-    {% for item in dados %}
-		{% if len_ifa != 1 %}
-        Os itens considerados para avaliação da severidade do {{ item.ifa }} do fabricante {{ item.fabricante }} foram a dosagem máxima diária,
-		{% else %}
-		Os itens considerados para avaliação da severidade foram a dosagem máxima diária,
-		{% endif %}
-		classificada como {{ item.dose_maxima }}, correspondente a {% if item.dose_maxima == 1 %} menos de 1 mg{% elif item.dose_maxima == 2 %} entre 1 mg e 10 mg{% elif item.dose_maxima == 3 %} mais de 10 mg até 100 mg{% elif item.dose_maxima == 4 %} mais de 100 mg até 2 g{% elif item.dose_maxima == 5 %} acima de 2 g{% endif %}, a duração do tratamento, categorizada como {{ item.duracao_trat }}, sendo {% if item.duracao_trat == 2 %} entre 1 dia e 1 mês{% elif item.duracao_trat == 3 %} entre 1 mês e 1 ano{% elif item.duracao_trat == 4 %} entre 1 ano e 10 anos{% elif item.duracao_trat == 5 %} de 10 anos até a vida inteira{% endif %}, e ação classificada como {% if item.local_acao == 1 %} local{% elif item.local_acao == 5 %} sistêmica{% endif %}, e a população de pacientes, classificada como nível {{ item.pop_pacientes }}, portanto o medicamento {% if item.pop_pacientes == 1 %} não é indicado para grupos vulneráveis, como neonatos, pediátricos, geriátricos, gestantes e imunossuprimidos{% elif item.pop_pacientes == 5 %} pode ser indicado para pelo menos um dos grupos vulneráveis, como neonatos, pediátricos, geriátricos, gestantes e imunossuprimidos{% endif %}. 
-    {% endfor %}
-
-    {% if len_ifa != 1 %}
-        Para o produto acabado, a severidade foi considerada com base na condição mais crítica entre os IFAs avaliados.
-    {% endif %}
+	<p style="text-align: center; font-size: 9pt"><strong>Quadro 5: </strong>Atribuição de valores para o parâmetro Severidade.</p>
+	<table border="1" cellpadding="0" cellspacing="0" style="width:100%; text-align: center; line-height: 2; text-indent: 0">
+		<thead>
+			<tr>
+				<th>IFA</th>
+				<th>Dosagem Máxima Diária</th>
+				<th>Duração do Tratamento</th>
+				<th>Local de ação</th>
+				<th>População de Pacientes</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for item in dados_unicos %}
+				<tr>
+					<td>{{ item.ifa }}</td>
+					<td>
+						{{ item.dose_maxima }} - 
+						{% if item.dose_maxima == 1 %}< 1 mg{% elif item.dose_maxima == 2 %}1 - 10 mg{% elif item.dose_maxima == 3 %}> 10 - 100 mg{% elif item.dose_maxima == 4 %}> 100 mg - 2 g{% elif item.dose_maxima == 5 %}>2 g{% endif %}
+					</td>
+					<td>
+						{{ item.duracao_trat }} - 
+						{% if item.duracao_trat == 2 %}1 dia - 1 mês{% elif item.duracao_trat == 3 %}1 mês - 1 ano{% elif item.duracao_trat == 4 %}1 ano - 10 anos{% elif item.duracao_trat == 5 %}10 anos - vida inteira{% endif %}
+					</td>
+					<td>
+						{{ item.local_acao }} - 
+						{% if item.local_acao == 1 %}ação local{% elif item.local_acao == 5 %}ação sistêmica{% endif %}
+					</td>
+					<td>
+						{{ item.pop_pacientes }} - 
+						{% if item.pop_pacientes == 1 %}Medicamento não é indicado para pacientes neonatais, pediátricos, geriátricos, gestantes e imunossuprimidos{% elif item.pop_pacientes == 5 %}Medicamento pode ser indicado para pelo menos um dos pacientes listados acima.{% endif %}
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
 </p>
 
-
+	<p>A partir das situações consideradas para avaliação dos parâmetros de Severidade, Detectabilidade e Probabilidade, assim como o enquadramento destas situações, foram obtidos os riscos globais para o(s) respectivo(s) IFA(s) e produto acabado.</p>
 {% for item in dados %}
     <p>
         Para o IFA {{ item.ifa }} do fabricante {{ item.fabricante }}, o risco global calculado foi de {{ item.risco }}{% if not item.nitrosamina %},

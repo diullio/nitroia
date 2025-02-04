@@ -168,7 +168,16 @@ def html_AR(dados, produto, dados_anexos, elaborador, ia_racional, referencia, r
 
     maior_risco_ifa = 0
 
-    len_ifa = len(dados)
+    # Lista para armazenar os dicionários únicos
+    dados_unicos = []
+    # Conjunto para rastrear os IFAs já adicionados
+    ifas_vistos = set()
+
+    for item in dados:
+        if item["ifa"] not in ifas_vistos:
+            dados_unicos.append(item)
+            ifas_vistos.add(item["ifa"])
+
     # Itera sobre os itens em 'dados' para encontrar o maior risco
     for item in dados:
         # Verifica se 'risco' está presente e é um número
@@ -196,7 +205,7 @@ def html_AR(dados, produto, dados_anexos, elaborador, ia_racional, referencia, r
             risco_pa=risco_pa,
             risco_final=risco_final,
             produto_acabado = produto_acabado,
-            len_ifa=len_ifa
+            dados_unicos = dados_unicos,
         )
         return html
     except Exception as e:
