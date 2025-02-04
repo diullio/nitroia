@@ -176,7 +176,7 @@ def html_AR(dados, produto, dados_anexos, elaborador, ia_racional, referencia, r
     for item in dados:
         if item["ifa"] not in ifas_vistos:
             dados_unicos.append(item)
-            ifas_vistos.add(item["ifa"])
+            ifas_vistos.append(item["ifa"])
 
     # Itera sobre os itens em 'dados' para encontrar o maior risco
     for item in dados:
