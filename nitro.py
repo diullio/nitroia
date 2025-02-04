@@ -43,7 +43,7 @@ def main():
         planta_fabril = st.text_input("Planta Fabril", key="planta_fabril")
         difa = st.text_input("DIFA (DMF)", key="difa")
         dose_maxima = st.text_input("Pontuação Dose Máxima", key="dose_maxima")
-        duracao_trat = st.text_input("Pontuação duracao_trat", key="duracao_trat")
+        duracao_trat = st.text_input("Pontuação Duração do Tratamento", key="duracao_trat")
         local_acao = st.text_input("Pontuação Local de Ação", key="local_acao")
         pop_pacientes = st.text_input("Pontuação População de Pacientes", key="pop_pacientes")
         
