@@ -513,7 +513,7 @@
 
     {% for item in dados %}
 		{% if len_ifa != 1 %}
-        Os itens considerados para avaliação da severidade do {{ item.ifa }} foram a dosagem máxima diária,
+        Os itens considerados para avaliação da severidade do {{ item.ifa }} do fabricante {{ item.fabricante }} foram a dosagem máxima diária,
 		{% else %}
 		Os itens considerados para avaliação da severidade foram a dosagem máxima diária,
 		{% endif %}
