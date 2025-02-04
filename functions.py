@@ -171,7 +171,7 @@ def html_AR(dados, produto, dados_anexos, elaborador, ia_racional, referencia, r
     # Lista para armazenar os dicionários únicos
     dados_unicos = []
     # Conjunto para rastrear os IFAs já adicionados
-    ifas_vistos = set()
+    ifas_vistos = []
 
     for item in dados:
         if item["ifa"] not in ifas_vistos:
