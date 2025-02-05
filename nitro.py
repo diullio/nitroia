@@ -166,7 +166,10 @@ def main():
         if not produto or not st.session_state.dados or not risco_pa:
             st.error("Por favor, insira o nome do produto e adicione pelo menos um IFA.")
         else:
-            if selected_files:
+            if selected_files == 'sem_risco.txt':
+                context = load_selected_files(selected_files)
+                ia_racional, referencia = context, ''
+            elif selected_files:
                 context = load_selected_files(selected_files)
                 prompt = f'''Elabore um racional com base no contexto fornecido e referencie o texto. Ao final faça uma conclusão com base no racional abordado sem gerar um novo topico finalizando meu racional, considerando que para eu ter formação de nitrosaminas eu preciso ter Aminas, Nitrito e Meio reacional ácido, caso seja possivel mitigar com os racionais selecionados gere uma conclusão de risco baixo.
                 '''

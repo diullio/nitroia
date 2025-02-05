@@ -1,4 +1,1 @@
-No processo não foram identificados precursores para formação de nitrosaminas, portanto faça apenas um texto suscinto mitigando o risco.
-
-Não cite nitrosaminas potenciais.
-Nao utilize referências nesse documento, nem conforme descrito no documento SEM_RISCO.TXT, nao cite o SEM_RISCO.TXT ao final.
+Sabe-se que a tríade para a formação de nitrosaminas consiste na presença de aminas, agentes nitrosantes e meio reacional ácido. Tendo em vista que a ausência de qualquer um desses componentes reduz significativamente o risco de formação de nitrosaminas e que no processo em questão não foram identificados precursores, o risco foi classificado como baixo.
