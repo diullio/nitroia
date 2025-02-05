@@ -166,7 +166,7 @@ def main():
         if not produto or not st.session_state.dados or not risco_pa:
             st.error("Por favor, insira o nome do produto e adicione pelo menos um IFA.")
         else:
-            if selected_files == 'sem_risco.txt':
+            if selected_files == 'sem_risco':
                 context = load_sem_risco(selected_files)
                 ia_racional, referencia = context, ''
             elif selected_files:
