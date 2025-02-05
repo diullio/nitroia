@@ -509,7 +509,7 @@
     {% for i in num_range %}
         {{ i | romanize }}{% if not loop.last %}, {% else %} {% endif %}
     {% endfor %}
-    desta avaliação de risco, sendo possível verificar na tabela os itens avaliados, com os pesos a serem considerados. Os itens considerados para avaliação do parâmetro Severidade, assim como os níveis e respectivos enquadramentos, estão apresentados no quadro abaixo.
+    desta avaliação de risco, sendo possível verificar na tabela os itens avaliados, com os pesos a serem considerados. Os itens considerados para avaliação do parâmetro Severidade, assim como os níveis e respectivos enquadramentos, estão apresentados no quadro abaixo. Para o produto acabado foi considerado o cenário mais critico para Severidade.
 
 	<p style="text-align: center; font-size: 9pt"><strong>Quadro 5: </strong>Atribuição de valores para o parâmetro Severidade.</p>
 	<table border="1" cellpadding="0" cellspacing="0" style="width:100%; text-align: center; line-height: 2; text-indent: 0">
@@ -536,7 +536,7 @@
 						{{ item.local_acao }} ({% if item.local_acao == 1 %}ação local{% elif item.local_acao == 5 %}ação sistêmica{% endif %})
 					</td>
 					<td>
-						{{ item.pop_pacientes }} ({% if item.pop_pacientes == 1 %}medicamento não é indicado para pacientes neonatais, pediátricos, geriátricos, gestantes e imunossuprimidos{% elif item.pop_pacientes == 5 %}medicamento pode ser indicado para pelo menos um dos pacientes listados acima{% endif %})
+						{{ item.pop_pacientes }} ({% if item.pop_pacientes == 1 %}medicamento não é indicado para pacientes neonatais, pediátricos, geriátricos, gestantes e imunossuprimidos{% elif item.pop_pacientes == 5 %}medicamento pode ser indicado para pelo menos um dos pacientes{% endif %})
 					</td>
 				</tr>
 			{% endfor %}
