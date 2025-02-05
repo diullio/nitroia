@@ -160,7 +160,6 @@ def main():
     files_in_directory = [f for f in os.listdir(racionais_directory) if f.endswith(".txt")]
     # Exibe checkboxes para cada arquivo
     selected_files = st.multiselect("Selecione os itens que deseja considerar:", files_in_directory)
-    print(selected_files)
         
 
     if st.button("Gerar Avaliação de Risco"):

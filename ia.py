@@ -63,7 +63,7 @@ def load_sem_risco(selected_files):
                 with open(path_txt, 'r', encoding='utf-8') as file:
                     content = file.read()
 
-                all_text += content + "    "
+                all_text = content
             except Exception as e:
                 print(f"Erro ao processar o arquivo {filename}: {e}")
     

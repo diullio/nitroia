@@ -536,7 +536,7 @@
 						{{ item.local_acao }} ({% if item.local_acao == 1 %}ação local{% elif item.local_acao == 5 %}ação sistêmica{% endif %})
 					</td>
 					<td>
-						{{ item.pop_pacientes }} ({% if item.pop_pacientes == 1 %}medicamento não é indicado para pacientes neonatais, pediátricos, geriátricos, gestantes e imunossuprimidos{% elif item.pop_pacientes == 5 %}medicamento pode ser indicado para pelo menos um dos pacientes{% endif %})
+						{{ item.pop_pacientes }} ({% if item.pop_pacientes == 1 %}medicamento não é indicado para pacientes neonatais, pediátricos, geriátricos, gestantes e imunossuprimidos{% elif item.pop_pacientes == 5 %}medicamento pode ser indicado para pelo menos um dos pacientes neonatais, pediátricos, geriátricos, gestantes e imunossuprimidos{% endif %})
 					</td>
 				</tr>
 			{% endfor %}
