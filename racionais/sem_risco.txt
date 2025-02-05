@@ -1,4 +1,4 @@
 No processo não foram identificados precursores para formação de nitrosaminas, portanto faça apenas um texto suscinto abrangendo e mitigando a triade (amina, pH e ácido).
 
 Não cite nitrosaminas potenciais.
-Nao utilize referências nesse documento, nem conforme descrito no documento SEM_RISCO.TXT
+Nao utilize referências nesse documento, nem conforme descrito no documento SEM_RISCO.TXT, nao cite o SEM_RISCO.TXT ao final.
