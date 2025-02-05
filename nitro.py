@@ -2,7 +2,7 @@ import os
 import streamlit as st
 import pandas as pd
 from functions import localizar_ppb, gerar_html, criar_quadro, criar_texto, html_AR
-from ia import load_selected_files, nitro_chat, ajustar_referencias_html, fragmentar_html_referencias
+from ia import load_selected_files, nitro_chat, ajustar_referencias_html, fragmentar_html_referencias, load_sem_risco
 
 # Inicializa o estado global para armazenar dados
 if "dados" not in st.session_state:
@@ -167,7 +167,7 @@ def main():
             st.error("Por favor, insira o nome do produto e adicione pelo menos um IFA.")
         else:
             if selected_files == 'sem_risco.txt':
-                context = load_selected_files(selected_files)
+                context = load_sem_risco(selected_files)
                 ia_racional, referencia = context, ''
             elif selected_files:
                 context = load_selected_files(selected_files)

@@ -40,6 +40,35 @@ def load_selected_files(selected_files):
     
     return all_text
 
+def load_sem_risco(selected_files):
+    """
+    Lê arquivos `.txt` da pasta atual com base em uma lista de nomes de arquivos selecionados,
+    e retorna uma string concatenada com os conteúdos, separando-os por títulos baseados nos nomes dos arquivos.
+
+    Args:
+        selected_files (list): Lista de nomes de arquivos selecionados (com extensão `.txt`).
+
+    Returns:
+        str: Conteúdo concatenado dos arquivos com títulos formatados.
+    """
+    all_text = ""  # Armazenar o conteúdo concatenado
+
+    racionais_directory = os.path.join(os.getcwd(), "racionais")
+
+    for filename in selected_files:
+        if filename.endswith(".txt"):  # Verifica se o arquivo é `.txt`
+            path_txt = os.path.join(racionais_directory, filename)  # Caminho completo do arquivo
+            try:
+                # Lê o conteúdo do arquivo
+                with open(path_txt, 'r', encoding='utf-8') as file:
+                    content = file.read()
+
+                all_text += content + "    "
+            except Exception as e:
+                print(f"Erro ao processar o arquivo {filename}: {e}")
+    
+    return all_text
+
 def nitro_chat(prompt, context):
     #Inicializar o modelo
     llm = ChatOpenAI(temperature=0.5, model='gpt-4o-mini-2024-07-18')
