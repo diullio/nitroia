@@ -9,7 +9,8 @@ from collections import OrderedDict
 import requests
 import json
 
-API_KEY = "AIzaSyDjRfAVjbrnH4ssIh8T9BqnrL0dMp2q2bw"
+
+API_KEY = os.getenv("API_KEY")
 URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro-exp-03-25:generateContent?key={API_KEY}"
 #URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={API_KEY}"
 
