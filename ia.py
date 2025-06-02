@@ -9,10 +9,14 @@ from collections import OrderedDict
 import requests
 import json
 
+## Para o streamlit
 API_KEY = st.secrets["google"]["api_key"]
 os.environ["API_KEY"] = API_KEY
- 
-URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-04-17:generateContent?key={API_KEY}"
+
+## Rodar local
+#API_KEY = 'AIzaSyD7a1pRceORqYvwkJicKXFkTF6OCkJ4sOE'
+
+URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key={API_KEY}"
 #URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={API_KEY}"
 
 
